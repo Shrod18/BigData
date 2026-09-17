@@ -1793,3 +1793,13 @@ Setting up watches.  Beware: since -r was given, this may take a while!
 Watches established.
 /home/pauline/BigData/logs/ MODIFY s3-sync.log
 Modification détectée -> synchronisation S3
+Completed 123.5 KiB/123.5 KiB (2.6 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 123.8 KiB/123.8 KiB (2.4 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
