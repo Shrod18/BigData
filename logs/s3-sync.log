@@ -1,0 +1,1795 @@
+nohup: ignoring input
+Surveillance de /home/pauline/BigData
+Destination : s3://opencode-data
+Completed 3 Bytes/96 Bytes (27 Bytes/s) with 2 file(s) remainingupload: ./test.txt to s3://opencode-data/test.txt               
+Completed 3 Bytes/96 Bytes (27 Bytes/s) with 1 file(s) remainingCompleted 96 Bytes/96 Bytes (834 Bytes/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 608 Bytes/608 Bytes (6.6 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 928 Bytes/928 Bytes (14.7 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log    
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 1.2 KiB/1.2 KiB (14.8 KiB/s) with 2 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log
+Completed 1.2 KiB/1.2 KiB (14.8 KiB/s) with 1 file(s) remainingupload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 1.7 KiB/1.7 KiB (9.0 KiB/s) with 2 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log
+Completed 1.7 KiB/1.7 KiB (9.0 KiB/s) with 1 file(s) remainingCompleted 1.7 KiB/1.7 KiB (8.7 KiB/s) with 1 file(s) remainingupload: ./test-sync.txt to s3://opencode-data/test-sync.txt   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 2.2 KiB/2.2 KiB (20.5 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 2.5 KiB/2.5 KiB (91.7 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 2.8 KiB/2.8 KiB (47.3 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 3.1 KiB/3.1 KiB (73.1 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 3.4 KiB/3.4 KiB (28.1 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/3.7 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 3.7 KiB/3.7 KiB (33.5 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 4.2 KiB/4.2 KiB (84.8 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 4.5 KiB/4.5 KiB (218.4 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 4.8 KiB/4.8 KiB (176.8 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 5.1 KiB/5.1 KiB (180.7 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 5.4 KiB/5.4 KiB (139.5 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 5.7 KiB/5.7 KiB (189.9 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 6.0 KiB/6.0 KiB (133.6 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 6.4 KiB/6.4 KiB (184.5 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 6.7 KiB/6.7 KiB (42.5 KiB/s) with 2 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log
+Completed 6.7 KiB/6.7 KiB (42.5 KiB/s) with 1 file(s) remainingupload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 7.1 KiB/7.1 KiB (81.9 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 7.5 KiB/7.5 KiB (77.7 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 7.8 KiB/7.8 KiB (144.3 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 8.1 KiB/8.1 KiB (125.5 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 8.4 KiB/8.4 KiB (94.2 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 8.7 KiB/8.7 KiB (125.6 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/9.0 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 9.0 KiB/9.0 KiB (145.0 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 9.5 KiB/9.5 KiB (210.0 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 9.8 KiB/9.8 KiB (441.0 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 10.1 KiB/10.1 KiB (273.9 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 10.4 KiB/10.4 KiB (339.8 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 10.7 KiB/10.7 KiB (254.6 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 11.0 KiB/11.0 KiB (306.6 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/11.3 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 11.3 KiB/11.3 KiB (219.3 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 11.8 KiB/11.8 KiB (205.9 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 12.1 KiB/12.1 KiB (232.9 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 12.4 KiB/12.4 KiB (329.5 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 12.8 KiB/12.8 KiB (258.9 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 13.1 KiB/13.1 KiB (506.5 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 13.4 KiB/13.4 KiB (397.5 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 13.7 KiB/13.7 KiB (308.2 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/14.0 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 14.0 KiB/14.0 KiB (216.6 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 14.5 KiB/14.5 KiB (574.2 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 14.8 KiB/14.8 KiB (447.5 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 15.1 KiB/15.1 KiB (601.4 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 15.4 KiB/15.4 KiB (646.7 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 15.7 KiB/15.7 KiB (745.7 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 16.1 KiB/16.1 KiB (758.9 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 16.4 KiB/16.4 KiB (810.1 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 16.7 KiB/16.7 KiB (533.8 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 17.0 KiB/17.0 KiB (792.8 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 17.3 KiB/17.3 KiB (846.4 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 17.6 KiB/17.6 KiB (371.2 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 17.9 KiB/17.9 KiB (352.2 KiB/s) with 2 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Completed 17.9 KiB/17.9 KiB (352.2 KiB/s) with 1 file(s) remainingupload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 18.4 KiB/18.4 KiB (643.8 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 18.7 KiB/18.7 KiB (625.3 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 19.0 KiB/19.0 KiB (844.3 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 19.4 KiB/19.4 KiB (521.8 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 19.7 KiB/19.7 KiB (633.4 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 20.0 KiB/20.0 KiB (784.9 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 20.3 KiB/20.3 KiB (946.5 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 20.6 KiB/20.6 KiB (729.0 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 20.9 KiB/20.9 KiB (703.5 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/21.2 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 21.2 KiB/21.2 KiB (395.7 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 21.7 KiB/21.7 KiB (531.7 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 22.0 KiB/22.0 KiB (542.9 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 22.3 KiB/22.3 KiB (1.0 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 22.6 KiB/22.6 KiB (930.8 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 23.0 KiB/23.0 KiB (1.2 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 23.3 KiB/23.3 KiB (1.7 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 23.6 KiB/23.6 KiB (1.3 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 23.9 KiB/23.9 KiB (880.7 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 24.2 KiB/24.2 KiB (578.5 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 24.5 KiB/24.5 KiB (680.2 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/24.8 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 24.8 KiB/24.8 KiB (339.2 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 25.3 KiB/25.3 KiB (412.4 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 25.6 KiB/25.6 KiB (864.0 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 25.9 KiB/25.9 KiB (873.5 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 26.2 KiB/26.2 KiB (960.0 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 26.6 KiB/26.6 KiB (929.8 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 26.9 KiB/26.9 KiB (802.8 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 27.2 KiB/27.2 KiB (554.8 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 27.5 KiB/27.5 KiB (186.9 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/27.8 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 27.8 KiB/27.8 KiB (222.1 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 28.3 KiB/28.3 KiB (617.7 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 166 Bytes/23.0 MiB (1.6 KiB/s) with 5 file(s) remainingupload: .venv/pyvenv.cfg to s3://opencode-data/.venv/pyvenv.cfg  
+Completed 166 Bytes/23.0 MiB (1.6 KiB/s) with 4 file(s) remainingCompleted 28.8 KiB/23.0 MiB (226.0 KiB/s) with 4 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Completed 28.8 KiB/23.0 MiB (226.0 KiB/s) with 3 file(s) remainingCompleted 284.8 KiB/23.0 MiB (1.5 MiB/s) with 3 file(s) remaining Completed 540.8 KiB/23.0 MiB (2.7 MiB/s) with 3 file(s) remaining Completed 796.8 KiB/23.0 MiB (3.8 MiB/s) with 3 file(s) remaining Completed 1.0 MiB/23.0 MiB (4.8 MiB/s) with 3 file(s) remaining   Completed 1.3 MiB/23.0 MiB (6.0 MiB/s) with 3 file(s) remaining   Completed 1.5 MiB/23.0 MiB (6.9 MiB/s) with 3 file(s) remaining   Completed 1.8 MiB/23.0 MiB (7.7 MiB/s) with 3 file(s) remaining   Completed 2.0 MiB/23.0 MiB (8.5 MiB/s) with 3 file(s) remaining   Completed 2.3 MiB/23.0 MiB (9.3 MiB/s) with 3 file(s) remaining   Completed 2.5 MiB/23.0 MiB (10.2 MiB/s) with 3 file(s) remaining  Completed 2.8 MiB/23.0 MiB (10.8 MiB/s) with 3 file(s) remaining  Completed 3.0 MiB/23.0 MiB (11.3 MiB/s) with 3 file(s) remaining  Completed 3.3 MiB/23.0 MiB (12.0 MiB/s) with 3 file(s) remaining  Completed 3.5 MiB/23.0 MiB (12.9 MiB/s) with 3 file(s) remaining  Completed 3.8 MiB/23.0 MiB (13.6 MiB/s) with 3 file(s) remaining  Completed 4.0 MiB/23.0 MiB (13.5 MiB/s) with 3 file(s) remaining  Completed 4.3 MiB/23.0 MiB (14.2 MiB/s) with 3 file(s) remaining  Completed 4.5 MiB/23.0 MiB (14.9 MiB/s) with 3 file(s) remaining  Completed 4.8 MiB/23.0 MiB (14.9 MiB/s) with 3 file(s) remaining  Completed 5.0 MiB/23.0 MiB (15.7 MiB/s) with 3 file(s) remaining  Completed 5.3 MiB/23.0 MiB (16.3 MiB/s) with 3 file(s) remaining  Completed 5.5 MiB/23.0 MiB (16.8 MiB/s) with 3 file(s) remaining  Completed 5.8 MiB/23.0 MiB (16.9 MiB/s) with 3 file(s) remaining  Completed 6.0 MiB/23.0 MiB (17.3 MiB/s) with 3 file(s) remaining  Completed 6.3 MiB/23.0 MiB (17.8 MiB/s) with 3 file(s) remaining  Completed 6.5 MiB/23.0 MiB (18.2 MiB/s) with 3 file(s) remaining  Completed 6.8 MiB/23.0 MiB (18.9 MiB/s) with 3 file(s) remaining  Completed 7.0 MiB/23.0 MiB (19.3 MiB/s) with 3 file(s) remaining  Completed 7.3 MiB/23.0 MiB (19.8 MiB/s) with 3 file(s) remaining  Completed 7.5 MiB/23.0 MiB (20.3 MiB/s) with 3 file(s) remaining  Completed 7.8 MiB/23.0 MiB (20.9 MiB/s) with 3 file(s) remaining  Completed 8.0 MiB/23.0 MiB (21.0 MiB/s) with 3 file(s) remaining  Completed 8.3 MiB/23.0 MiB (21.5 MiB/s) with 3 file(s) remaining  Completed 8.5 MiB/23.0 MiB (22.1 MiB/s) with 3 file(s) remaining  Completed 8.8 MiB/23.0 MiB (22.6 MiB/s) with 3 file(s) remaining  Completed 9.0 MiB/23.0 MiB (22.9 MiB/s) with 3 file(s) remaining  Completed 9.3 MiB/23.0 MiB (23.0 MiB/s) with 3 file(s) remaining  Completed 9.5 MiB/23.0 MiB (23.4 MiB/s) with 3 file(s) remaining  Completed 9.8 MiB/23.0 MiB (23.7 MiB/s) with 3 file(s) remaining  Completed 10.0 MiB/23.0 MiB (23.7 MiB/s) with 3 file(s) remaining Completed 10.3 MiB/23.0 MiB (23.4 MiB/s) with 3 file(s) remaining Completed 10.5 MiB/23.0 MiB (23.9 MiB/s) with 3 file(s) remaining Completed 10.8 MiB/23.0 MiB (24.4 MiB/s) with 3 file(s) remaining Completed 11.0 MiB/23.0 MiB (24.3 MiB/s) with 3 file(s) remaining Completed 11.3 MiB/23.0 MiB (24.8 MiB/s) with 3 file(s) remaining Completed 11.5 MiB/23.0 MiB (24.6 MiB/s) with 3 file(s) remaining Completed 11.8 MiB/23.0 MiB (24.9 MiB/s) with 3 file(s) remaining Completed 12.0 MiB/23.0 MiB (24.9 MiB/s) with 3 file(s) remaining Completed 12.3 MiB/23.0 MiB (25.3 MiB/s) with 3 file(s) remaining Completed 12.5 MiB/23.0 MiB (25.3 MiB/s) with 3 file(s) remaining Completed 12.8 MiB/23.0 MiB (25.5 MiB/s) with 3 file(s) remaining Completed 13.0 MiB/23.0 MiB (25.9 MiB/s) with 3 file(s) remaining Completed 13.3 MiB/23.0 MiB (25.9 MiB/s) with 3 file(s) remaining Completed 13.5 MiB/23.0 MiB (26.0 MiB/s) with 3 file(s) remaining Completed 13.8 MiB/23.0 MiB (25.9 MiB/s) with 3 file(s) remaining Completed 14.0 MiB/23.0 MiB (26.3 MiB/s) with 3 file(s) remaining Completed 14.3 MiB/23.0 MiB (26.5 MiB/s) with 3 file(s) remaining Completed 14.5 MiB/23.0 MiB (26.5 MiB/s) with 3 file(s) remaining Completed 14.8 MiB/23.0 MiB (26.8 MiB/s) with 3 file(s) remaining Completed 15.0 MiB/23.0 MiB (26.8 MiB/s) with 3 file(s) remaining Completed 15.3 MiB/23.0 MiB (27.0 MiB/s) with 3 file(s) remaining Completed 15.5 MiB/23.0 MiB (27.0 MiB/s) with 3 file(s) remaining Completed 15.8 MiB/23.0 MiB (27.0 MiB/s) with 3 file(s) remaining Completed 16.0 MiB/23.0 MiB (27.3 MiB/s) with 3 file(s) remaining Completed 16.3 MiB/23.0 MiB (27.6 MiB/s) with 3 file(s) remaining Completed 16.5 MiB/23.0 MiB (27.6 MiB/s) with 3 file(s) remaining Completed 16.8 MiB/23.0 MiB (27.8 MiB/s) with 3 file(s) remaining Completed 17.0 MiB/23.0 MiB (28.0 MiB/s) with 3 file(s) remaining Completed 17.3 MiB/23.0 MiB (27.9 MiB/s) with 3 file(s) remaining Completed 17.5 MiB/23.0 MiB (28.1 MiB/s) with 3 file(s) remaining Completed 17.8 MiB/23.0 MiB (28.4 MiB/s) with 3 file(s) remaining Completed 18.0 MiB/23.0 MiB (28.3 MiB/s) with 3 file(s) remaining Completed 18.3 MiB/23.0 MiB (28.6 MiB/s) with 3 file(s) remaining Completed 18.5 MiB/23.0 MiB (28.5 MiB/s) with 3 file(s) remaining Completed 18.8 MiB/23.0 MiB (28.6 MiB/s) with 3 file(s) remaining Completed 19.0 MiB/23.0 MiB (28.8 MiB/s) with 3 file(s) remaining Completed 19.3 MiB/23.0 MiB (28.6 MiB/s) with 3 file(s) remaining Completed 19.5 MiB/23.0 MiB (28.6 MiB/s) with 3 file(s) remaining Completed 19.8 MiB/23.0 MiB (28.8 MiB/s) with 3 file(s) remaining Completed 20.0 MiB/23.0 MiB (28.8 MiB/s) with 3 file(s) remaining Completed 20.3 MiB/23.0 MiB (29.0 MiB/s) with 3 file(s) remaining Completed 20.5 MiB/23.0 MiB (29.0 MiB/s) with 3 file(s) remaining Completed 20.8 MiB/23.0 MiB (29.2 MiB/s) with 3 file(s) remaining Completed 21.0 MiB/23.0 MiB (29.4 MiB/s) with 3 file(s) remaining Completed 21.3 MiB/23.0 MiB (29.5 MiB/s) with 3 file(s) remaining Completed 21.5 MiB/23.0 MiB (29.7 MiB/s) with 3 file(s) remaining Completed 21.8 MiB/23.0 MiB (29.8 MiB/s) with 3 file(s) remaining Completed 22.0 MiB/23.0 MiB (29.9 MiB/s) with 3 file(s) remaining Completed 22.3 MiB/23.0 MiB (30.0 MiB/s) with 3 file(s) remaining Completed 22.5 MiB/23.0 MiB (30.3 MiB/s) with 3 file(s) remaining Completed 22.7 MiB/23.0 MiB (16.0 MiB/s) with 3 file(s) remaining upload: .venv/bin/python3.12 to s3://opencode-data/.venv/bin/python3.12
+Completed 22.7 MiB/23.0 MiB (16.0 MiB/s) with 2 file(s) remainingCompleted 22.8 MiB/23.0 MiB (16.1 MiB/s) with 2 file(s) remainingupload: .venv/bin/python to s3://opencode-data/.venv/bin/python  
+Completed 22.8 MiB/23.0 MiB (16.1 MiB/s) with 1 file(s) remainingCompleted 23.0 MiB/23.0 MiB (16.1 MiB/s) with 1 file(s) remainingupload: .venv/bin/python3 to s3://opencode-data/.venv/bin/python3
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 35.6 KiB/35.6 KiB (717.1 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 35.9 KiB/35.9 KiB (1.2 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 36.2 KiB/36.2 KiB (737.5 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 36.5 KiB/36.5 KiB (736.1 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 36.8 KiB/36.8 KiB (532.1 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/37.1 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 37.1 KiB/37.1 KiB (617.6 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 37.6 KiB/37.6 KiB (1.5 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 37.9 KiB/37.9 KiB (544.1 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 38.3 KiB/38.3 KiB (1.2 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 38.6 KiB/38.6 KiB (1.6 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 38.9 KiB/38.9 KiB (1.6 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 39.2 KiB/39.2 KiB (1.0 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 39.5 KiB/39.5 KiB (1.2 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 39.8 KiB/39.8 KiB (387.7 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 40.1 KiB/40.1 KiB (284.0 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/40.4 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 40.4 KiB/40.4 KiB (112.7 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 40.9 KiB/40.9 KiB (1023.3 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log    
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 41.2 KiB/41.2 KiB (806.5 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 41.5 KiB/41.5 KiB (509.3 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 41.8 KiB/41.8 KiB (434.1 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 42.2 KiB/42.2 KiB (956.9 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 42.5 KiB/42.5 KiB (731.7 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 42.8 KiB/42.8 KiB (536.4 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 43.1 KiB/43.1 KiB (272.0 KiB/s) with 2 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Completed 43.1 KiB/43.1 KiB (272.0 KiB/s) with 1 file(s) remainingupload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 43.6 KiB/43.6 KiB (743.6 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 43.9 KiB/43.9 KiB (1.4 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 44.2 KiB/44.2 KiB (812.4 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 44.5 KiB/44.5 KiB (194.0 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 44.8 KiB/44.8 KiB (278.6 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 45.1 KiB/45.1 KiB (390.6 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 45.5 KiB/45.5 KiB (168.1 KiB/s) with 2 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Completed 45.5 KiB/45.5 KiB (168.1 KiB/s) with 1 file(s) remainingupload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 45.9 KiB/45.9 KiB (719.4 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 46.3 KiB/46.3 KiB (1.3 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 46.6 KiB/46.6 KiB (1.4 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 46.9 KiB/46.9 KiB (1.1 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 47.2 KiB/47.2 KiB (891.8 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 47.5 KiB/47.5 KiB (721.1 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/47.8 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 47.8 KiB/47.8 KiB (357.0 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 48.3 KiB/48.3 KiB (561.1 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 48.6 KiB/48.6 KiB (904.5 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 48.9 KiB/48.9 KiB (539.7 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 49.2 KiB/49.2 KiB (558.9 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 49.5 KiB/49.5 KiB (410.6 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 49.9 KiB/49.9 KiB (428.1 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/50.2 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 50.2 KiB/50.2 KiB (443.3 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 1.0 KiB/~1.0 KiB (19.9 KiB/s) with ~1 file(s) remaining (calculating...)upload: ./.dashboard.py.swp to s3://opencode-data/.dashboard.py.swp               
+Completed 1.0 KiB/~1.0 KiB (19.9 KiB/s) with ~0 file(s) remaining (calculating...)Completed 51.9 KiB/51.9 KiB (401.0 KiB/s) with 1 file(s) remaining                upload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log                   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 1.0 KiB/~1.0 KiB (24.0 KiB/s) with ~1 file(s) remaining (calculating...)upload: ./.dashboard.py.swp to s3://opencode-data/.dashboard.py.swp               
+Completed 1.0 KiB/~1.0 KiB (24.0 KiB/s) with ~0 file(s) remaining (calculating...)Completed 52.5 KiB/52.5 KiB (494.6 KiB/s) with 1 file(s) remaining                upload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log                   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 51.8 KiB/55.5 KiB (232.3 KiB/s) with 3 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Completed 51.8 KiB/55.5 KiB (232.3 KiB/s) with 2 file(s) remainingdelete: s3://opencode-data/.dashboard.py.swp                      
+Completed 51.8 KiB/55.5 KiB (232.3 KiB/s) with 1 file(s) remainingCompleted 54.5 KiB/55.5 KiB (146.6 KiB/s) with 1 file(s) remainingupload: ./dashboard.py to s3://opencode-data/dashboard.py         
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 52.5 KiB/52.5 KiB (1.1 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 52.8 KiB/52.8 KiB (872.1 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 53.1 KiB/53.1 KiB (309.4 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 53.4 KiB/53.4 KiB (384.5 KiB/s) with 2 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Completed 53.4 KiB/53.4 KiB (384.5 KiB/s) with 1 file(s) remainingupload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 53.9 KiB/53.9 KiB (596.4 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 54.2 KiB/54.2 KiB (1.5 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 54.5 KiB/54.5 KiB (699.7 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 54.8 KiB/54.8 KiB (250.0 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 55.1 KiB/55.1 KiB (731.7 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/55.4 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 55.4 KiB/55.4 KiB (530.6 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 55.9 KiB/55.9 KiB (530.8 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 56.2 KiB/56.2 KiB (178.5 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 56.5 KiB/56.5 KiB (601.0 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 56.9 KiB/56.9 KiB (561.2 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/57.2 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 57.2 KiB/57.2 KiB (504.2 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 57.7 KiB/57.7 KiB (741.9 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 58.0 KiB/58.0 KiB (712.5 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 58.3 KiB/58.3 KiB (1.2 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 58.6 KiB/58.6 KiB (766.1 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 58.9 KiB/58.9 KiB (728.1 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 59.2 KiB/59.2 KiB (442.6 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/59.5 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 59.5 KiB/59.5 KiB (755.1 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 60.0 KiB/60.0 KiB (1.5 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 60.3 KiB/60.3 KiB (1.4 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 60.6 KiB/60.6 KiB (1.3 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 60.9 KiB/60.9 KiB (1.5 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 61.2 KiB/61.2 KiB (1.8 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 61.6 KiB/61.6 KiB (2.3 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 61.9 KiB/61.9 KiB (1.4 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 62.2 KiB/62.2 KiB (1.2 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/62.5 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 62.5 KiB/62.5 KiB (551.3 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 63.0 KiB/63.0 KiB (985.3 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 63.3 KiB/63.3 KiB (2.6 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 63.6 KiB/63.6 KiB (2.0 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 63.9 KiB/63.9 KiB (671.4 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 64.2 KiB/64.2 KiB (1.3 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 64.5 KiB/64.5 KiB (663.8 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/64.8 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 64.8 KiB/64.8 KiB (670.5 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 65.3 KiB/65.3 KiB (1.3 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 65.6 KiB/65.6 KiB (1.5 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 65.9 KiB/65.9 KiB (1.5 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 66.2 KiB/66.2 KiB (1.4 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 66.5 KiB/66.5 KiB (2.1 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 66.9 KiB/66.9 KiB (616.0 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 67.2 KiB/67.2 KiB (847.6 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/67.5 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 67.5 KiB/67.5 KiB (738.9 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 68.0 KiB/68.0 KiB (608.9 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 68.3 KiB/68.3 KiB (2.1 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 68.6 KiB/68.6 KiB (1.8 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 68.9 KiB/68.9 KiB (2.2 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 69.2 KiB/69.2 KiB (2.1 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 69.5 KiB/69.5 KiB (2.0 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 69.8 KiB/69.8 KiB (1.5 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 70.1 KiB/70.1 KiB (1.5 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 70.4 KiB/70.4 KiB (687.7 KiB/s) with 2 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Completed 70.4 KiB/70.4 KiB (687.7 KiB/s) with 1 file(s) remainingupload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 70.9 KiB/70.9 KiB (988.6 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 71.2 KiB/71.2 KiB (551.4 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 71.6 KiB/71.6 KiB (1.0 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 71.9 KiB/71.9 KiB (2.2 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 72.2 KiB/72.2 KiB (0 Bytes/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 72.5 KiB/72.5 KiB (1.2 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/72.8 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 72.8 KiB/72.8 KiB (983.9 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 73.3 KiB/73.3 KiB (855.7 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 73.6 KiB/73.6 KiB (1.7 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 73.9 KiB/73.9 KiB (1.2 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 74.2 KiB/74.2 KiB (1.4 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 74.5 KiB/74.5 KiB (1.7 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 74.8 KiB/74.8 KiB (1.4 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/75.1 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 75.1 KiB/75.1 KiB (898.4 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 75.6 KiB/75.6 KiB (1.8 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 75.9 KiB/75.9 KiB (2.5 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 76.2 KiB/76.2 KiB (2.2 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 76.5 KiB/76.5 KiB (1.3 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 76.8 KiB/76.8 KiB (1.7 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 77.2 KiB/77.2 KiB (2.0 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 77.5 KiB/77.5 KiB (2.1 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/77.8 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 77.8 KiB/77.8 KiB (977.5 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 78.3 KiB/78.3 KiB (1.2 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 78.6 KiB/78.6 KiB (1.7 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 78.9 KiB/78.9 KiB (1.2 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 79.2 KiB/79.2 KiB (3.2 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 79.5 KiB/79.5 KiB (2.8 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 79.8 KiB/79.8 KiB (1.5 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 80.1 KiB/80.1 KiB (1.4 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/80.4 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 80.4 KiB/80.4 KiB (1.2 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 80.9 KiB/80.9 KiB (1.7 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 81.2 KiB/81.2 KiB (2.3 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 81.5 KiB/81.5 KiB (2.1 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 81.8 KiB/81.8 KiB (1.0 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 82.1 KiB/82.1 KiB (630.8 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 82.4 KiB/82.4 KiB (532.8 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/82.8 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 82.8 KiB/82.8 KiB (695.3 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 83.2 KiB/83.2 KiB (2.5 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 83.5 KiB/83.5 KiB (3.3 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 83.9 KiB/83.9 KiB (1.1 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 84.2 KiB/84.2 KiB (1.3 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 84.5 KiB/84.5 KiB (2.1 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 84.8 KiB/84.8 KiB (1.3 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 85.1 KiB/85.1 KiB (1.4 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/85.4 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 85.4 KiB/85.4 KiB (604.6 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 85.9 KiB/85.9 KiB (842.9 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 86.2 KiB/86.2 KiB (1.5 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 86.5 KiB/86.5 KiB (2.0 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 86.8 KiB/86.8 KiB (1.9 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 87.1 KiB/87.1 KiB (2.4 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 87.4 KiB/87.4 KiB (2.2 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 87.7 KiB/87.7 KiB (2.7 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 88.0 KiB/88.0 KiB (893.8 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/88.4 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 88.4 KiB/88.4 KiB (463.1 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 88.8 KiB/88.8 KiB (1.2 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 89.2 KiB/89.2 KiB (2.0 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 89.5 KiB/89.5 KiB (1.7 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 89.8 KiB/89.8 KiB (1.9 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 90.1 KiB/90.1 KiB (2.2 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 90.4 KiB/90.4 KiB (2.1 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 90.7 KiB/90.7 KiB (593.9 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 91.0 KiB/91.0 KiB (588.7 KiB/s) with 2 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Completed 91.0 KiB/91.0 KiB (588.7 KiB/s) with 1 file(s) remainingupload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 91.5 KiB/91.5 KiB (702.2 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 91.8 KiB/91.8 KiB (1.3 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 92.1 KiB/92.1 KiB (2.0 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 92.4 KiB/92.4 KiB (3.3 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 92.7 KiB/92.7 KiB (2.8 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 93.0 KiB/93.0 KiB (3.9 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 93.4 KiB/93.4 KiB (2.3 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 93.7 KiB/93.7 KiB (1.8 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/94.0 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 94.0 KiB/94.0 KiB (1.4 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 94.5 KiB/94.5 KiB (2.0 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 94.8 KiB/94.8 KiB (2.7 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 95.1 KiB/95.1 KiB (2.7 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 95.4 KiB/95.4 KiB (3.2 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 95.7 KiB/95.7 KiB (1.6 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 96.0 KiB/96.0 KiB (946.7 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 96.3 KiB/96.3 KiB (1.3 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/96.6 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 96.6 KiB/96.6 KiB (963.6 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 97.1 KiB/97.1 KiB (2.1 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 97.4 KiB/97.4 KiB (1.5 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 97.7 KiB/97.7 KiB (2.2 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 98.0 KiB/98.0 KiB (2.9 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 98.3 KiB/98.3 KiB (3.0 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 98.6 KiB/98.6 KiB (2.5 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 99.0 KiB/99.0 KiB (2.1 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 99.3 KiB/99.3 KiB (1.5 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/99.6 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 99.6 KiB/99.6 KiB (1.3 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log 
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 100.0 KiB/100.0 KiB (2.9 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 100.4 KiB/100.4 KiB (3.1 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 100.7 KiB/100.7 KiB (2.3 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 101.0 KiB/101.0 KiB (2.0 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 101.3 KiB/101.3 KiB (2.0 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 101.6 KiB/101.6 KiB (1.7 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 101.9 KiB/101.9 KiB (1.3 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 102.2 KiB/102.2 KiB (414.7 KiB/s) with 2 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log     
+Completed 102.2 KiB/102.2 KiB (414.7 KiB/s) with 1 file(s) remainingupload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 102.7 KiB/102.7 KiB (2.5 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 103.0 KiB/103.0 KiB (2.2 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 103.4 KiB/103.4 KiB (2.3 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 103.7 KiB/103.7 KiB (2.7 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 104.0 KiB/104.0 KiB (1.6 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 104.3 KiB/104.3 KiB (2.0 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 104.6 KiB/104.6 KiB (1.3 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 104.9 KiB/104.9 KiB (1.1 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/105.2 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 105.2 KiB/105.2 KiB (1.1 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 105.7 KiB/105.7 KiB (2.5 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 106.0 KiB/106.0 KiB (2.6 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 106.3 KiB/106.3 KiB (3.3 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 106.7 KiB/106.7 KiB (4.2 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 107.0 KiB/107.0 KiB (3.8 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 107.3 KiB/107.3 KiB (3.6 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 107.6 KiB/107.6 KiB (3.2 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 107.9 KiB/107.9 KiB (3.8 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 108.2 KiB/108.2 KiB (3.0 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 108.5 KiB/108.5 KiB (2.5 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/108.8 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 108.8 KiB/108.8 KiB (1.5 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 109.3 KiB/109.3 KiB (3.6 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 109.6 KiB/109.6 KiB (5.5 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 109.9 KiB/109.9 KiB (2.0 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 110.3 KiB/110.3 KiB (3.0 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 110.6 KiB/110.6 KiB (3.7 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 110.9 KiB/110.9 KiB (2.7 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 111.2 KiB/111.2 KiB (1.9 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 111.5 KiB/111.5 KiB (962.0 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log     
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/111.8 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 111.8 KiB/111.8 KiB (757.3 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log     
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 112.3 KiB/112.3 KiB (2.2 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 112.6 KiB/112.6 KiB (2.7 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 112.9 KiB/112.9 KiB (2.5 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 113.3 KiB/113.3 KiB (3.1 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 113.6 KiB/113.6 KiB (794.4 KiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log     
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 113.9 KiB/113.9 KiB (3.3 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 114.2 KiB/114.2 KiB (2.0 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 114.5 KiB/114.5 KiB (1.3 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 114.8 KiB/114.8 KiB (1.5 MiB/s) with 2 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Completed 114.8 KiB/114.8 KiB (1.5 MiB/s) with 1 file(s) remainingupload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 115.3 KiB/115.3 KiB (3.6 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 115.6 KiB/115.6 KiB (3.6 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 115.9 KiB/115.9 KiB (3.3 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 116.2 KiB/116.2 KiB (4.1 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 116.6 KiB/116.6 KiB (5.6 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 116.9 KiB/116.9 KiB (4.2 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 117.2 KiB/117.2 KiB (5.2 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 117.5 KiB/117.5 KiB (2.3 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 117.8 KiB/117.8 KiB (4.1 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 118.1 KiB/118.1 KiB (4.5 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/118.4 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 118.4 KiB/118.4 KiB (1.8 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 118.9 KiB/118.9 KiB (3.0 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 119.2 KiB/119.2 KiB (4.3 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 119.5 KiB/119.5 KiB (3.8 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 119.9 KiB/119.9 KiB (4.4 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 120.2 KiB/120.2 KiB (4.0 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 120.5 KiB/120.5 KiB (4.8 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 120.8 KiB/120.8 KiB (5.1 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 121.1 KiB/121.1 KiB (4.0 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 121.4 KiB/121.4 KiB (5.7 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 121.7 KiB/121.7 KiB (2.8 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+upload: logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json to s3://opencode-data/logs/ses_f5097eac3ffeQYLp1JBhbD9gby.json
+Completed 0 Bytes/122.0 KiB (0 Bytes/s) with 1 file(s) remainingCompleted 122.0 KiB/122.0 KiB (1.8 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 122.5 KiB/122.5 KiB (2.6 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 122.8 KiB/122.8 KiB (3.2 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
+Completed 123.2 KiB/123.2 KiB (2.5 MiB/s) with 1 file(s) remainingupload: logs/s3-sync.log to s3://opencode-data/logs/s3-sync.log   
+Setting up watches.  Beware: since -r was given, this may take a while!
+Watches established.
+/home/pauline/BigData/logs/ MODIFY s3-sync.log
+Modification détectée -> synchronisation S3
