@@ -13,11 +13,13 @@
   - [🧊 Apache Iceberg](#apache-iceberg)
   - [📄 Parquet](#parquet)
   - [📸 Metadata et snapshots](#metadata-et-snapshots-iceberg)
+  - [🔐 Transactions ACID](#transactions-acid)
 
 - [📊 Dashboard Streamlit](#dashboard-streamlit)
 - [💾 Cache du dashboard](#cache-du-dashboard)
 - [📦 Export RustFS](#export-rustfs)
 - [⚡ Export Spark / Iceberg](#export-spark-et-iceberg)
+
 - [📚 Documentation Docsify](#documentation-docsify)
 - [🧭 Navigation Docsify](#navigation-docsify)
 - [🐍 Environnement Python](#environnement-python)
@@ -27,6 +29,8 @@
 - [✅ Vérification](#verification)
 - [💻 Commandes utiles](#commandes-utiles)
 - [🔌 Ports](#ports)
+
+- [🔄 Architecture ETL](#architecture-etl)
 - [🧩 Architecture finale](#architecture-finale)
 - [🔄 Fonctionnement global](#fonctionnement-global)
 - [📋 Résumé des technologies](#resume-des-technologies)

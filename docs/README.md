@@ -4,26 +4,43 @@
 
 Ce projet met en place une petite infrastructure **Big Data / Data Lake en local**.
 
-L'objectif est de reproduire simplement le fonctionnement d'une architecture de données complète : production, stockage, traitement, organisation, supervision et documentation.
+L'objectif est de reproduire simplement le fonctionnement d'une architecture de données complète :
 
-Le flux principal est :
+- production de données ;
+- ingestion de fichiers et de logs ;
+- stockage compatible S3 ;
+- traitement avec Apache Spark ;
+- organisation des données avec Apache Iceberg ;
+- conservation des données en Parquet ;
+- supervision avec Streamlit ;
+- documentation avec Docsify.
+
+Le flux principal actuellement implémenté est :
 
 ```text
 OpenCode
    ↓
 Fichiers / logs
    ↓
-RustFS
+Scripts de synchronisation
+   ↓
+RustFS / S3
    ↓
 Apache Spark
    ↓
+Transformations
+   ↓
 Apache Iceberg
+   ↓
+Iceberg Warehouse
+   ↓
+Parquet + Metadata + Snapshots
    ↓
 Cache local
    ↓
 Streamlit
    ↓
-Dashboard
+Dashboard / BI
 ```
 
 La documentation fonctionne en parallèle :
@@ -36,11 +53,12 @@ Docsify
 Documentation web
 ```
 
-Docsify ne participe pas au traitement des données. Il sert uniquement à afficher cette documentation sous forme de site web.
+Docsify ne participe pas au traitement des données. Il sert uniquement à présenter la documentation du projet.
 
 ---
 
 <a id="infrastructure"></a>
+
 # 1. Infrastructure
 
 ## OpenCode
@@ -54,7 +72,7 @@ Il permet notamment de :
 - aider à corriger des erreurs ;
 - produire des fichiers et des logs.
 
-Dans l'infrastructure, OpenCode peut donc aussi être considéré comme une **source de données**.
+Dans l'infrastructure, OpenCode peut également être considéré comme une **source de données**.
 
 ---
 
@@ -74,6 +92,7 @@ Structure simplifiée :
 BigData/
 ├── README.md
 ├── dashboard.py
+├── spark_iceberg.py
 ├── spark_dashboard_export.py
 ├── rustfs_dashboard_export.py
 ├── sync-opencode-log.sh
@@ -94,9 +113,9 @@ BigData/
 
 ## Docker
 
-Docker permet d'exécuter certains composants du projet dans des conteneurs.
+Docker permet d'exécuter une application dans un **conteneur**, c'est-à-dire un environnement isolé qui regroupe l'application et ce dont elle a besoin pour fonctionner.
 
-Dans ce projet, il sert principalement à lancer **RustFS**.
+Dans ce projet, Docker sert principalement à lancer **RustFS** de manière isolée, reproductible et simple à démarrer ou arrêter.
 
 Le fichier :
 
@@ -106,9 +125,7 @@ docker-compose.yml
 
 contient la configuration nécessaire au démarrage du service.
 
-Docker permet donc d'isoler RustFS du reste du système tout en conservant ses données dans un volume.
-
-Le service est décrit dans `docker-compose.yml` :
+Le service RustFS utilise notamment :
 
 | Élément | Valeur |
 |---|---|
@@ -126,8 +143,9 @@ docker compose logs -f rustfs
 docker compose down
 ```
 
-Le volume n'est pas supprimé par `docker compose down`. Les données RustFS
-restent donc disponibles lors du prochain démarrage.
+Le volume n'est pas supprimé par `docker compose down`.
+
+Les données RustFS restent donc disponibles lors du prochain démarrage.
 
 ---
 
@@ -135,7 +153,7 @@ restent donc disponibles lors du prochain démarrage.
 
 RustFS est le système de stockage principal du projet.
 
-Il fournit une API compatible avec **Amazon S3**.
+Il fournit une API compatible avec **Amazon S3**. S3 est un modèle de stockage objet : au lieu d'organiser les données comme un disque classique, les fichiers sont enregistrés sous forme d'objets dans des **buckets**. Ici, RustFS reproduit ce fonctionnement en local.
 
 Le bucket principal est :
 
@@ -165,60 +183,65 @@ http://localhost:9001
 En résumé :
 
 ```text
-RustFS = stockage
+RustFS = stockage objet compatible S3
 ```
 
 ### Organisation des objets
 
-Le bucket utilisé par le projet est `opencode-data`. Les préfixes principaux
-sont :
+Le bucket utilisé par le projet est `opencode-data`.
 
-| Préfixe | Contenu | Catégorie du dashboard |
+Les préfixes principaux sont :
+
+| Préfixe | Contenu | Catégorie |
 |---|---|---|
 | `logs/` | Logs OpenCode synchronisés | Logs OpenCode |
 | `spark-warehouse/` | Données et métadonnées Iceberg | Iceberg / Spark |
 | autres chemins | Fichiers du projet | Projet / fichiers |
 
-Un préfixe S3 ressemble à un dossier, mais il s'agit en réalité d'une partie
-de la clé de l'objet. RustFS conserve les objets dans son volume Docker et
-les expose par son API compatible S3.
+RustFS conserve les objets dans son volume Docker et les expose par son API compatible S3.
 
 ### Accès S3
 
-Les scripts utilisent les paramètres locaux suivants :
+Configuration locale utilisée :
 
 ```text
 Endpoint : http://127.0.0.1:9000
 Région   : us-east-1
-Clé      : rustfsadmin
-Secret   : rustfsadmin
 Bucket   : opencode-data
 ```
 
-Ces identifiants sont adaptés à un environnement local de démonstration.
-Ils doivent être remplacés avant toute exposition du service sur un réseau.
-
-Exemples de vérification :
+Exemples :
 
 ```bash
-aws --profile rustfs --endpoint-url http://localhost:9000 s3 ls
-aws --profile rustfs --endpoint-url http://localhost:9000 s3 ls s3://opencode-data/
-aws --profile rustfs --endpoint-url http://localhost:9000 s3 ls s3://opencode-data/logs/
+aws --profile rustfs \
+  --endpoint-url http://localhost:9000 \
+  s3 ls
+
+aws --profile rustfs \
+  --endpoint-url http://localhost:9000 \
+  s3 ls s3://opencode-data/
+
+aws --profile rustfs \
+  --endpoint-url http://localhost:9000 \
+  s3 ls s3://opencode-data/logs/
 ```
 
-L'option `--endpoint-url` est importante : sans elle, AWS CLI tente de
-contacter AWS au lieu de RustFS.
+L'option `--endpoint-url` est importante : sans elle, AWS CLI tente de contacter AWS au lieu de RustFS.
 
 ---
 
 ## AWS CLI
 
-AWS CLI permet de communiquer avec RustFS grâce à son API compatible S3.
+AWS CLI est un outil en ligne de commande permettant de manipuler des services compatibles AWS, notamment S3.
+
+Dans ce projet, il permet de communiquer avec RustFS grâce à son API compatible S3.
 
 Exemple :
 
 ```bash
-aws --profile rustfs   --endpoint-url http://localhost:9000   s3 ls
+aws --profile rustfs \
+  --endpoint-url http://localhost:9000 \
+  s3 ls
 ```
 
 Dans ce projet, cette commande communique avec **RustFS en local** et non avec Amazon AWS.
@@ -244,16 +267,18 @@ OpenCode / fichiers locaux
           ↓
 script de synchronisation
           ↓
-        RustFS
+       RustFS / S3
 ```
 
-Cela évite d'envoyer manuellement chaque fichier vers le stockage S3.
+Cette étape correspond au chargement des données brutes dans le stockage S3.
 
 ---
 
 ## Apache Spark
 
-Apache Spark est le moteur de traitement des données.
+Apache Spark est le moteur de traitement des données. Un moteur de traitement permet de lire des données, d'appliquer des opérations dessus puis de produire un résultat exploitable.
+
+Dans ce projet, Spark exécute les transformations nécessaires avant l'écriture ou l'analyse des données Iceberg.
 
 Son rôle est différent de RustFS :
 
@@ -265,7 +290,9 @@ Spark  = traitement
 Spark peut notamment :
 
 - lire des données ;
+- nettoyer les données ;
 - filtrer des informations ;
+- sélectionner des colonnes ;
 - compter des lignes ;
 - regrouper des données ;
 - exécuter des requêtes SQL ;
@@ -273,7 +300,9 @@ Spark peut notamment :
 
 Dans ce projet, Spark fonctionne localement sur la machine.
 
-Il n'est pas lancé en permanence. Il est utilisé lorsqu'un traitement ou une actualisation des données Spark / Iceberg est demandé.
+Il n'est pas lancé en permanence.
+
+Il est utilisé lorsqu'un traitement ou une actualisation des données Spark / Iceberg est demandé.
 
 ### Configuration locale
 
@@ -284,12 +313,7 @@ Spark UI de l'export   désactivée
 shuffle.partitions     4 pour l'export du dashboard
 ```
 
-`local[*]` utilise les cœurs disponibles sur la machine. L'export du
-dashboard désactive la Spark UI car il s'agit d'un traitement court exécuté
-en arrière-plan. Le script interactif `spark_iceberg.py`, lui, conserve la UI
-pour observer le traitement.
-
-Les dépendances chargées par Spark sont :
+Dépendances principales utilisées :
 
 ```text
 org.apache.iceberg:iceberg-spark-runtime-4.1_2.13:1.11.0
@@ -300,25 +324,19 @@ Lors de la première exécution, Spark peut télécharger ces JAR depuis Maven.
 
 ### Lancer un test Spark complet
 
-Le script crée le namespace, crée la table, insère une ligne, lit les données
-et affiche les snapshots :
-
 ```bash
 cd ~/BigData
 source .venv/bin/activate
 python spark_iceberg.py
 ```
 
-Le traitement du dashboard, lui, est lancé en arrière-plan depuis Streamlit
-ou `start-all.sh`.
+Le script peut créer le namespace, créer la table, insérer une ligne, lire les données et afficher les snapshots.
 
 ---
 
 ## PySpark
 
-PySpark permet d'utiliser Apache Spark depuis Python.
-
-Le principe est :
+PySpark est l'interface Python d'Apache Spark. Il permet donc d'écrire les traitements Spark directement en Python plutôt qu'en Scala ou en Java.
 
 ```text
 Python
@@ -334,7 +352,9 @@ Les scripts Python du projet peuvent ainsi lancer des traitements Spark sans uti
 
 ## Apache Iceberg
 
-Apache Iceberg sert à organiser les données du Data Lake sous forme de tables.
+Apache Iceberg est un **format de table pour Data Lake**. Il ajoute une structure de table au-dessus de fichiers stockés dans S3 et permet notamment de gérer le schéma, les versions, les snapshots et les écritures transactionnelles.
+
+Dans ce projet, Iceberg organise les données du Data Lake sous forme de tables.
 
 Il ne remplace ni RustFS ni Spark.
 
@@ -344,7 +364,7 @@ Spark   = traitement
 Iceberg = organisation des tables
 ```
 
-Une table Iceberg peut être composée de plusieurs fichiers physiques, tout en étant manipulée comme une seule table.
+Une table Iceberg peut être composée de plusieurs fichiers physiques tout en étant manipulée comme une seule table.
 
 Exemple de table utilisée dans le projet :
 
@@ -352,7 +372,7 @@ Exemple de table utilisée dans le projet :
 rustfs.opencode.logs
 ```
 
-avec des colonnes comme :
+Schéma :
 
 ```text
 timestamp
@@ -375,8 +395,10 @@ Table     : rustfs.opencode.logs
 ```
 
 Le chemin `s3a://` permet à Hadoop et Spark d'utiliser le connecteur S3A.
-Les fichiers de données, les manifests et les métadonnées sont stockés dans
-RustFS : aucun serveur Iceberg séparé n'est nécessaire.
+
+Les fichiers de données, les manifests et les métadonnées sont stockés dans RustFS.
+
+Aucun serveur Iceberg séparé n'est nécessaire.
 
 ### Schéma de la table
 
@@ -388,25 +410,31 @@ RustFS : aucun serveur Iceberg séparé n'est nécessaire.
 | `content` | `STRING` | Contenu du log |
 | `source_file` | `STRING` | Fichier d'origine |
 
-Création SQL :
+Exemple de création SQL :
 
 ```sql
 CREATE NAMESPACE IF NOT EXISTS rustfs.opencode;
 
 CREATE TABLE IF NOT EXISTS rustfs.opencode.logs (
-   timestamp TIMESTAMP,
-   session_id STRING,
-   type STRING,
-   content STRING,
-   source_file STRING
+    timestamp TIMESTAMP,
+    session_id STRING,
+    type STRING,
+    content STRING,
+    source_file STRING
 ) USING iceberg;
 ```
 
-Lecture et historique :
+Lecture :
 
 ```sql
-SELECT * FROM rustfs.opencode.logs ORDER BY timestamp DESC;
+SELECT *
+FROM rustfs.opencode.logs
+ORDER BY timestamp DESC;
+```
 
+Historique :
+
+```sql
 SELECT committed_at, snapshot_id, operation
 FROM rustfs.opencode.logs.snapshots
 ORDER BY committed_at DESC;
@@ -416,7 +444,9 @@ ORDER BY committed_at DESC;
 
 ## Parquet
 
-Parquet est un format de fichier adapté au stockage et à l'analyse de données.
+Parquet est un format de fichier **colonnaire** : les valeurs d'une même colonne sont stockées ensemble. Cette organisation est particulièrement adaptée aux analyses, car Spark peut lire uniquement les colonnes nécessaires sans parcourir toutes les données.
+
+Il est donc utilisé pour stocker efficacement les données des tables Iceberg.
 
 Il est notamment :
 
@@ -431,7 +461,9 @@ Les données d'une table Iceberg sont principalement stockées dans des fichiers
 
 ## Metadata et snapshots Iceberg
 
-Iceberg conserve également des métadonnées.
+Iceberg conserve également des **métadonnées**, c'est-à-dire des informations qui décrivent la table : son schéma, ses fichiers, ses versions et son état courant.
+
+Un **snapshot** correspond à un état précis de la table à un instant donné. Lorsqu'une écriture est validée, Iceberg peut créer un nouveau snapshot sans remplacer brutalement l'état précédent.
 
 Elles permettent notamment de savoir :
 
@@ -440,9 +472,7 @@ Elles permettent notamment de savoir :
 - quel est l'état actuel de la table ;
 - quels anciens états sont disponibles.
 
-Les **snapshots** représentent les différents états de la table au fil du temps.
-
-Exemple :
+Les **snapshots** représentent différents états de la table au fil du temps.
 
 ```text
 Snapshot 1
@@ -455,15 +485,43 @@ Snapshot 3
 30 lignes
 ```
 
-Cela permet de conserver un historique des évolutions de la table.
+Chaque écriture Iceberg produit un nouvel état cohérent de la table.
 
-Chaque écriture Iceberg produit un nouveau snapshot. Les snapshots permettent
-donc de suivre l'historique des opérations et les métadonnées décrivent le
-schéma, les manifests et les fichiers associés à chaque état.
+Les snapshots permettent donc de suivre l'historique des opérations.
+
+---
+
+## Transactions ACID
+
+Apache Iceberg apporte des garanties transactionnelles de type **ACID** au niveau des tables.
+
+Une transaction correspond à une opération logique qui doit être appliquée de manière fiable. Les propriétés ACID évitent par exemple qu'une écriture partielle laisse la table dans un état incohérent.
+
+ACID signifie :
+
+- **Atomicité** : une opération est appliquée complètement ou pas du tout ;
+- **Cohérence** : la table reste dans un état valide ;
+- **Isolation** : les opérations concurrentes ne doivent pas produire un état incohérent ;
+- **Durabilité** : une écriture validée reste conservée.
+
+Le principe est :
+
+```text
+Apache Spark
+     ↓
+Apache Iceberg
+     ↓
+Transactions ACID
+     ↓
+Snapshots + Metadata
+     ↓
+Iceberg Warehouse / S3
+```
 
 ---
 
 <a id="dashboard-streamlit"></a>
+
 # 2. Dashboard Streamlit
 
 Streamlit permet d'afficher l'état du projet dans une interface web.
@@ -476,22 +534,25 @@ http://localhost:8501
 
 Le dashboard permet notamment de consulter :
 
-| Page | Utilite |
+| Page | Utilité |
 |---|---|
-| Vue generale | Etat global de l'infrastructure |
+| Vue générale | État global de l'infrastructure |
 | Stockage S3 | Informations sur RustFS |
-| Iceberg | Donnees et snapshots Iceberg |
-| Spark | Resultats des traitements Spark |
-| OpenCode | Logs et activite OpenCode |
+| Iceberg | Données et snapshots Iceberg |
+| Spark | Résultats des traitements Spark |
+| OpenCode | Logs et activité OpenCode |
 
-Streamlit sert donc principalement à la **supervision** et à la **visualisation**.
+Streamlit sert principalement à la **supervision** et à la **visualisation**.
 
 ---
 
 <a id="cache-du-dashboard"></a>
+
 # 3. Cache du dashboard
 
-Le dashboard ne lance pas directement tous les traitements lourds à chaque affichage.
+Un **cache** conserve temporairement un résultat déjà calculé afin d'éviter de refaire le même traitement à chaque affichage.
+
+Le dashboard ne lance donc pas directement tous les traitements lourds à chaque ouverture ou changement de page.
 
 Les informations calculées par RustFS et Spark sont enregistrées dans un cache local :
 
@@ -515,8 +576,6 @@ Cela permet au dashboard de rester réactif même lorsque l'analyse RustFS ou Sp
 
 ### Fichiers générés
 
-Le cache est écrit dans `~/.local/state/bigdata/dashboard_cache/` :
-
 | Fichier | Producteur | Contenu |
 |---|---|---|
 | `rustfs_status.json` | Export RustFS | État du dernier inventaire |
@@ -524,18 +583,15 @@ Le cache est écrit dans `~/.local/state/bigdata/dashboard_cache/` :
 | `rustfs_recent.csv` | Export RustFS | Objets récemment modifiés |
 | `rustfs_logs.csv` | Export RustFS | Logs OpenCode détectés |
 | `spark_status.json` | Export Spark | État, erreur éventuelle et compteurs |
-| `iceberg_rows.csv` | Export Spark | Aperçu limité à 2 000 lignes |
+| `iceberg_rows.csv` | Export Spark | Aperçu des données Iceberg |
 | `snapshots.csv` | Export Spark | Historique des snapshots |
 | `spark_stats.csv` | Export Spark | Nombre de lignes par type |
-| `spark_activity.csv` | Export Spark | Activité regroupée par heure |
-
-Les exports écrivent d'abord un fichier temporaire puis le remplacent. Le
-dashboard peut ainsi lire un fichier complet pendant qu'un nouveau traitement
-est en cours.
+| `spark_activity.csv` | Export Spark | Activité regroupée dans le temps |
 
 ---
 
 <a id="export-rustfs"></a>
+
 # 4. Export RustFS
 
 Le script :
@@ -556,7 +612,7 @@ Il peut notamment calculer :
 - les fichiers les plus volumineux ;
 - l'activité du stockage.
 
-Les résultats sont ensuite enregistrés dans le cache local.
+Les résultats sont enregistrés dans le cache local.
 
 Dans le dashboard, le bouton :
 
@@ -569,6 +625,7 @@ permet de relancer cet inventaire.
 ---
 
 <a id="export-spark-et-iceberg"></a>
+
 # 5. Export Spark et Iceberg
 
 Le script :
@@ -600,9 +657,12 @@ permet de lancer ce traitement.
 ---
 
 <a id="documentation-docsify"></a>
+
 # 6. Documentation Docsify
 
-Docsify permet d'afficher cette documentation Markdown sous forme de site web.
+Docsify est un outil qui transforme des fichiers Markdown en documentation web navigable.
+
+Dans ce projet, il permet d'afficher cette documentation sous forme de site sans modifier le fonctionnement de l'infrastructure Big Data.
 
 Son rôle est différent de Streamlit :
 
@@ -617,7 +677,7 @@ La documentation Docsify est stockée dans :
 ~/BigData/docs/
 ```
 
-Structure utilisée :
+Structure :
 
 ```text
 docs/
@@ -627,35 +687,13 @@ docs/
 └── .nojekyll
 ```
 
-Le fichier :
+`docs/README.md` contient toute la documentation.
 
-```text
-docs/README.md
-```
+`docs/_sidebar.md` contient le menu de navigation.
 
-contient toute la documentation.
+`docs/index.html` charge Docsify.
 
-Le fichier :
-
-```text
-docs/_sidebar.md
-```
-
-contient le menu de navigation.
-
-Le menu pointe vers les différentes sections de ce même README.
-
-Il n'est donc pas nécessaire de créer plusieurs fichiers Markdown pour chaque page.
-
-Le fichier :
-
-```text
-docs/index.html
-```
-
-charge Docsify.
-
-Docsify est chargé depuis un CDN, ce qui évite d'avoir à l'installer globalement avec npm.
+Docsify est chargé depuis un CDN, ce qui évite de devoir l'installer globalement avec npm.
 
 La documentation est servie localement avec Python :
 
@@ -674,49 +712,28 @@ Cette commande est intégrée dans `start-all.sh`.
 ---
 
 <a id="navigation-docsify"></a>
+
 # 7. Navigation Docsify
 
-La navigation Docsify utilise un seul fichier :
+La navigation utilise un seul fichier :
 
 ```text
 docs/README.md
 ```
 
-Le fichier `_sidebar.md` contient des liens vers les différentes sections du README.
+Les grandes sections disposent d'ancres HTML explicites.
 
 Exemple :
 
 ```markdown
-# Projet BigData
-
-- [Accueil](#)
-- [Presentation](#presentation)
-- [Infrastructure](#infrastructure)
-- [Dashboard](#dashboard-streamlit)
-- [Cache](#cache-du-dashboard)
-- [Docsify](#documentation-docsify)
-- [Demarrage](#demarrage)
-- [Arret](#arret)
-- [Commandes](#commandes-utiles)
-- [Ports](#ports)
-- [Architecture finale](#architecture-finale)
-```
-
-Les grandes sections numérotées utilisent des ancres HTML explicites placées
-juste avant leur titre, par exemple :
-
-```markdown
 <a id="infrastructure"></a>
+
 # 1. Infrastructure
 ```
 
-Cette méthode évite les problèmes liés aux numéros dans les ancres générées
-automatiquement. Les liens du menu restent relatifs, sous la forme `#ancre`,
-afin que Docsify conserve la page courante et fasse défiler la documentation
-vers la section demandée. Les sous-parties utilisent les ancres automatiques
-de Docsify, par exemple `#rustfs` ou `#apache-spark`.
+Le `_sidebar.md` peut donc pointer vers ces ancres.
 
-Dans `index.html`, la configuration peut utiliser :
+Configuration recommandée dans `docs/index.html` :
 
 ```javascript
 window.$docsify = {
@@ -727,11 +744,12 @@ window.$docsify = {
 }
 ```
 
-`subMaxLevel: 0` évite que Docsify ajoute automatiquement tous les sous-titres dans le menu latéral.
+`subMaxLevel: 0` évite que Docsify ajoute automatiquement tous les sous-titres dans le menu.
 
 ---
 
 <a id="environnement-python"></a>
+
 # 8. Environnement Python
 
 Le projet utilise un environnement virtuel Python :
@@ -740,7 +758,7 @@ Le projet utilise un environnement virtuel Python :
 ~/BigData/.venv
 ```
 
-Il contient les bibliothèques nécessaires au projet, par exemple :
+Il contient notamment :
 
 ```text
 pyspark
@@ -749,7 +767,7 @@ boto3
 pandas
 ```
 
-Pour l'activer manuellement :
+Activation manuelle :
 
 ```bash
 cd ~/BigData
@@ -759,6 +777,7 @@ source .venv/bin/activate
 ---
 
 <a id="demarrage"></a>
+
 # 9. Demarrage
 
 Le script principal est :
@@ -801,11 +820,12 @@ RustFS interface :
 http://localhost:9001
 ```
 
-Spark reste utilisé à la demande pour éviter de le laisser tourner inutilement en permanence.
+Spark reste utilisé à la demande afin d'éviter de le laisser tourner inutilement en permanence.
 
 ---
 
 <a id="arret"></a>
+
 # 10. Arret
 
 Le script :
@@ -833,11 +853,10 @@ Il arrête notamment :
 - l'inventaire RustFS ;
 - les services prévus par le script.
 
-Docsify est arrêté en libérant le serveur Python utilisant le port `3000`.
-
 ---
 
 <a id="verification"></a>
+
 # 11. Verification
 
 Le script :
@@ -862,6 +881,7 @@ Il est lancé uniquement lorsqu'un traitement est nécessaire.
 ---
 
 <a id="commandes-utiles"></a>
+
 # 12. Commandes utiles
 
 ## Demarrer le projet
@@ -895,16 +915,20 @@ python3 -m http.server 3000 --directory docs
 ## Afficher les buckets RustFS
 
 ```bash
-aws --profile rustfs   --endpoint-url http://localhost:9000   s3 ls
+aws --profile rustfs \
+  --endpoint-url http://localhost:9000 \
+  s3 ls
 ```
 
 ## Afficher le contenu du bucket principal
 
 ```bash
-aws --profile rustfs   --endpoint-url http://localhost:9000   s3 ls s3://opencode-data/
+aws --profile rustfs \
+  --endpoint-url http://localhost:9000 \
+  s3 ls s3://opencode-data/
 ```
 
-## Activer manuellement l'environnement Python
+## Activer l'environnement Python
 
 ```bash
 cd ~/BigData
@@ -914,6 +938,7 @@ source .venv/bin/activate
 ---
 
 <a id="ports"></a>
+
 # 13. Ports
 
 | Service | Port | Adresse |
@@ -925,30 +950,262 @@ source .venv/bin/activate
 
 ---
 
+<a id="architecture-etl"></a>
+
+# 14. Architecture Extract, Transform et Load
+
+Le projet peut être décrit simplement avec une logique de type **ETL**.
+
+ETL signifie **Extract, Transform, Load** :
+- **Extract** : récupérer les données depuis leur source ;
+- **Transform** : nettoyer, filtrer, regrouper ou modifier les données ;
+- **Load** : écrire le résultat dans la destination choisie.
+
+Dans ce projet, les données brutes sont d'abord chargées dans RustFS/S3, puis Spark réalise les transformations avant l'écriture dans Iceberg.
+
+```text
+             EXTRACT
+                │
+                ▼
+       OpenCode / fichiers
+                │
+                ▼
+     scripts de synchronisation
+                │
+                ▼
+          RustFS / S3
+                │
+                │
+                ▼
+            TRANSFORM
+          Apache Spark
+                │
+                ▼
+              LOAD
+                │
+                ▼
+         Apache Iceberg
+                │
+                ▼
+       Iceberg Warehouse
+                │
+       Parquet + Metadata
+        + Snapshots ACID
+                │
+                ▼
+         Streamlit / BI
+```
+
+## Extract
+
+La partie **Extract** consiste à récupérer les données produites par les sources. L'objectif est de rendre ces données disponibles pour la suite du pipeline, sans encore réaliser les transformations analytiques principales.
+
+Dans le projet :
+
+```text
+OpenCode
+   ↓
+fichiers / logs
+   ↓
+scripts de synchronisation
+```
+
+Les données sont ensuite envoyées dans RustFS.
+
+---
+
+## Inputs S3
+
+Un **input** correspond à une donnée d'entrée du pipeline. Ici, les inputs sont principalement les fichiers et logs déposés dans le stockage S3.
+
+Les données brutes sont chargées dans :
+
+```text
+s3://opencode-data/
+```
+
+RustFS constitue donc la couche de stockage S3 du projet.
+
+```text
+Fichiers / logs
+      ↓
+RustFS / S3
+      ↓
+Apache Spark
+```
+
+---
+
+## Transform
+
+La partie **Transform** correspond au traitement des données afin de les rendre propres, cohérentes et exploitables.
+
+Dans ce projet, cette étape est réalisée par Apache Spark.
+
+Spark peut notamment effectuer :
+
+- nettoyage ;
+- filtrage ;
+- sélection de colonnes ;
+- changement de format ;
+- regroupement ;
+- agrégation ;
+- calcul de statistiques ;
+- préparation des données avant leur écriture.
+
+```text
+RustFS / S3
+     ↓
+Apache Spark
+     ↓
+Transform
+```
+
+---
+
+## Load
+
+Le **Load** correspond à l'étape où les données transformées sont écrites dans leur destination finale ou analytique.
+
+Dans ce projet, le Load correspond à l'écriture des données transformées dans Apache Iceberg.
+
+```text
+Apache Spark
+     ↓
+Load
+     ↓
+Apache Iceberg
+     ↓
+Iceberg Warehouse
+```
+
+Le warehouse est stocké dans :
+
+```text
+s3a://opencode-data/spark-warehouse
+```
+
+Il ne s'agit pas d'un serveur supplémentaire.
+
+C'est une zone du bucket S3 utilisée par Iceberg.
+
+---
+
+## Iceberg Warehouse
+
+Un **warehouse** est l'emplacement de stockage utilisé par Iceberg pour conserver les fichiers physiques de ses tables : données Parquet, métadonnées, manifests et snapshots.
+
+Dans ce projet, le warehouse correspond à la zone `s3a://opencode-data/spark-warehouse` stockée dans RustFS.
+
+Le warehouse contient notamment :
+
+```text
+Iceberg Warehouse
+│
+├── fichiers Parquet
+├── metadata
+├── manifests
+└── snapshots
+```
+
+Il faut distinguer les rôles :
+
+```text
+Iceberg
+→ organise et versionne les tables
+
+RustFS / S3
+→ stocke physiquement les fichiers
+
+Spark
+→ lit, transforme et écrit les données
+```
+
+---
+
+## ACID
+
+Les propriétés **ACID** garantissent qu'une modification de table est appliquée de manière fiable et cohérente, même en cas d'échec ou d'opérations concurrentes.
+
+Iceberg apporte ces propriétés transactionnelles aux tables.
+
+```text
+Spark
+  ↓
+Iceberg
+  ↓
+Transactions ACID
+  ↓
+Snapshots + Metadata
+  ↓
+Warehouse S3
+```
+
+Cela permet notamment de conserver des états cohérents des tables et un historique des écritures.
+
+---
+
+## Restitution
+
+La **restitution** correspond au moment où les résultats préparés sont présentés à l'utilisateur sous une forme lisible : indicateurs, tableaux ou graphiques.
+
+Une fois les données organisées dans Iceberg, elles peuvent être lues et analysées par Spark.
+
+Les résultats utiles au dashboard sont ensuite exportés vers un cache local.
+
+```text
+Iceberg Warehouse
+       ↓
+     Spark
+       ↓
+statistiques / agrégations
+       ↓
+   Cache local
+       ↓
+   Streamlit / BI
+```
+
+Dans l'architecture actuelle, aucune base de restitution supplémentaire n'est nécessaire.
+
+---
+
 <a id="architecture-finale"></a>
-# 14. Architecture finale
+
+# 15. Architecture finale
 
 ```text
                          OpenCode
                             │
                             ▼
-                       ~/BigData
-                            │
-                     synchronisation
+                    Fichiers / Logs
                             │
                             ▼
-                         RustFS
+                 Scripts de synchronisation
+                            │
+                            ▼
+                       RustFS / S3
                             │
                             ▼
                      Apache Spark
                             │
+                      Transform
+                            │
                             ▼
                     Apache Iceberg
                             │
-               Parquet + metadata
+                         Load
                             │
                             ▼
-                         RustFS
+                  Iceberg Warehouse
+                            │
+            Parquet + Metadata + Manifests
+                            │
+                    Snapshots / ACID
+                            │
+                            ▼
+                     Apache Spark
+                            │
+             statistiques / agrégations
                             │
                             ▼
                        Cache local
@@ -957,7 +1214,7 @@ source .venv/bin/activate
                         Streamlit
                             │
                             ▼
-                        Dashboard
+                     Dashboard / BI
 ```
 
 La documentation fonctionne en parallèle :
@@ -976,33 +1233,38 @@ http://localhost:3000
 ---
 
 <a id="fonctionnement-global"></a>
-# 15. Fonctionnement global
 
-Le parcours général d'une donnée est :
+# 16. Fonctionnement global
 
 ```text
 1. OpenCode crée ou modifie une donnée
                 ↓
 2. La donnée est présente dans le projet
                 ↓
-3. Un script peut la synchroniser vers RustFS
+3. Un script la synchronise vers RustFS
                 ↓
-4. RustFS la stocke
+4. RustFS la stocke dans S3
                 ↓
-5. Spark peut la lire et la traiter
+5. Spark lit les données
                 ↓
-6. Iceberg organise les données en tables
+6. Spark les transforme
                 ↓
-7. Les données sont stockées en Parquet
+7. Spark écrit les données dans Iceberg
                 ↓
-8. Iceberg conserve les metadata et snapshots
+8. Iceberg organise les tables
                 ↓
-9. Les scripts d'export calculent les statistiques
+9. Le warehouse stocke Parquet et les métadonnées
                 ↓
-10. Streamlit affiche les résultats
+10. Iceberg conserve les snapshots et les transactions ACID
+                ↓
+11. Spark calcule les statistiques du dashboard
+                ↓
+12. Les résultats sont placés dans le cache local
+                ↓
+13. Streamlit affiche les résultats
 ```
 
-Docsify reste indépendant de ce flux :
+Docsify reste indépendant du flux de données :
 
 ```text
 Documentation Markdown
@@ -1015,37 +1277,40 @@ Documentation web
 ---
 
 <a id="resume-des-technologies"></a>
-# 16. Resume des technologies
 
-| Technologie | Role |
+# 17. Resume des technologies
+
+| Technologie | Rôle |
 |---|---|
 | OpenCode | Produit et modifie des fichiers et des logs |
-| Docker | Execute RustFS dans un conteneur |
-| Docker Compose | Configure et demarre RustFS |
-| RustFS | Stocke les donnees en S3 |
+| Docker | Exécute RustFS dans un conteneur |
+| Docker Compose | Configure et démarre RustFS |
+| RustFS | Stocke les données via S3 |
 | AWS CLI | Communique avec RustFS |
-| Scripts de synchronisation | Envoient automatiquement les fichiers |
-| Apache Spark | Traite et analyse les donnees |
+| Scripts de synchronisation | Chargent les fichiers dans S3 |
+| Apache Spark | Lit, transforme et analyse les données |
 | PySpark | Permet d'utiliser Spark avec Python |
-| Apache Iceberg | Organise les donnees sous forme de tables |
-| Parquet | Stocke efficacement les donnees |
+| Apache Iceberg | Organise et versionne les tables |
+| Iceberg Warehouse | Zone S3 contenant les tables Iceberg |
+| Parquet | Stocke les données |
+| Metadata / Manifests | Décrivent les tables Iceberg |
 | Snapshots | Conservent l'historique des tables |
-| Boto3 | Permet a Python de communiquer avec RustFS |
-| Cache local | Evite de recalculer les statistiques a chaque affichage |
-| Streamlit | Affiche le dashboard |
+| ACID | Garantit la cohérence transactionnelle des tables |
+| Boto3 | Permet à Python de communiquer avec RustFS |
+| Cache local | Conserve les statistiques du dashboard |
+| Streamlit | Affiche le dashboard / BI |
 | Docsify | Affiche la documentation du projet |
-| `start-all.sh` | Demarre l'infrastructure |
-| `stop-all.sh` | Arrete l'infrastructure |
-| `status-all.sh` | Verifie l'etat de l'infrastructure |
+| `start-all.sh` | Démarre l'infrastructure |
+| `stop-all.sh` | Arrête l'infrastructure |
+| `status-all.sh` | Vérifie l'état de l'infrastructure |
 
 ---
 
 <a id="depannage"></a>
-# 17. Dépannage
 
-## RustFS ne répond pas
+# 18. Depannage
 
-Vérifier le conteneur et les ports :
+## RustFS ne repond pas
 
 ```bash
 docker compose ps
@@ -1054,86 +1319,127 @@ curl -I http://127.0.0.1:9000
 ss -ltn | grep -E ':9000|:9001'
 ```
 
-Si RustFS vient d'être installé, démarrer l'infrastructure avec
-`./start-all.sh`. Une erreur `Connection refused` indique généralement que
-le conteneur n'est pas démarré ou que le port `9000` est déjà utilisé.
+---
 
-## Bucket ou identifiants incorrects
-
-Tester l'accès avec le même endpoint que les scripts :
+## Bucket incorrect
 
 ```bash
-aws --profile rustfs --endpoint-url http://127.0.0.1:9000 s3 ls
-aws --profile rustfs --endpoint-url http://127.0.0.1:9000 s3 ls s3://opencode-data/
+aws --profile rustfs \
+  --endpoint-url http://127.0.0.1:9000 \
+  s3 ls
+
+aws --profile rustfs \
+  --endpoint-url http://127.0.0.1:9000 \
+  s3 ls s3://opencode-data/
 ```
 
-Une erreur d'authentification vient souvent du profil AWS, tandis qu'une
-erreur `NoSuchBucket` signifie que `opencode-data` n'existe pas encore.
+---
 
-## Spark ne démarre pas
+## Spark ne demarre pas
 
-Consulter le journal et l'état du dernier export :
+Consulter :
 
 ```bash
 cat ~/.local/state/bigdata/spark-export.log
 cat ~/.local/state/bigdata/dashboard_cache/spark_status.json
 ```
 
-Les causes fréquentes sont l'absence de l'environnement `.venv`, un accès
-impossible à RustFS ou le téléchargement impossible des JAR Iceberg/Hadoop.
-Le script doit être lancé avec le Python de l'environnement virtuel.
+Les causes fréquentes sont :
+
+- environnement `.venv` non disponible ;
+- RustFS inaccessible ;
+- dépendances Iceberg/Hadoop non téléchargées ;
+- mauvaise configuration du warehouse.
+
+---
 
 ## La table Iceberg est introuvable
 
-Vérifier successivement le bucket, l'entrepôt et le nom complet de la table :
+Vérifier :
 
 ```text
-Bucket    opencode-data
-Entrepôt  s3a://opencode-data/spark-warehouse
-Table     rustfs.opencode.logs
+Bucket    : opencode-data
+Entrepôt  : s3a://opencode-data/spark-warehouse
+Table     : rustfs.opencode.logs
 ```
 
-Une différence entre `s3://` et `s3a://`, un mauvais endpoint ou un namespace
-différent suffit à empêcher Spark de retrouver la table.
+---
 
-## Le dashboard affiche d'anciennes données
+## Le dashboard affiche d'anciennes donnees
 
-Le dashboard lit le cache et ne recalcule pas systématiquement les données à
-chaque affichage. Relancer l'export depuis le dashboard ou supprimer uniquement
-les fichiers du cache, puis relancer l'export :
+Le dashboard lit le cache et ne recalcule pas systématiquement les données à chaque affichage.
+
+Pour supprimer uniquement le cache :
 
 ```bash
 rm -f ~/.local/state/bigdata/dashboard_cache/*.csv
 rm -f ~/.local/state/bigdata/dashboard_cache/*.json
 ```
 
-Cette commande ne supprime aucune donnée dans RustFS ; elle efface seulement
-les résultats calculés localement.
+Cette opération ne supprime aucune donnée dans RustFS.
+
+---
+
+## Docsify n'affiche pas la derniere version
+
+Mettre à jour :
+
+```bash
+cp ~/BigData/README.md ~/BigData/docs/README.md
+```
+
+Puis utiliser :
+
+```text
+Ctrl + F5
+```
+
+dans le navigateur.
 
 ---
 
 # Conclusion
 
-Ce projet met en place un **mini Data Lake local** permettant de reproduire les principales étapes d'une architecture Big Data.
+Ce projet met en place un **mini Data Lake local**.
 
-Le rôle de chaque grande partie peut être résumé simplement :
+Le fonctionnement peut être résumé simplement :
 
 ```text
 OpenCode produit les données.
 
-RustFS les stocke.
+Les scripts les chargent dans RustFS / S3.
 
-Spark les traite.
+Spark les lit et les transforme.
 
-Iceberg les organise.
+Iceberg organise les données en tables.
 
-Parquet les contient.
+Le warehouse conserve Parquet, metadata et snapshots.
 
-Le cache conserve les statistiques.
+Iceberg apporte les propriétés ACID.
+
+Spark calcule les statistiques utiles à la restitution.
+
+Le cache local conserve ces résultats.
 
 Streamlit les affiche.
 
 Docsify présente la documentation.
 ```
 
-L'infrastructure sépare ainsi clairement la production, le stockage, le traitement, l'organisation, la visualisation et la documentation.
+L'architecture mise en place reste volontairement simple :
+
+```text
+Sources
+   ↓
+S3
+   ↓
+Spark
+   ↓
+Transform
+   ↓
+Iceberg
+   ↓
+Warehouse
+   ↓
+Streamlit / BI
+```
