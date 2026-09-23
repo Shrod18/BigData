@@ -4,7 +4,9 @@
 
 Ce projet met en place une petite infrastructure **Big Data / Data Lake en local**.
 
-L'objectif est de reproduire simplement une architecture de données complète :
+L'objectif est de reproduire simplement une architecture de données complète, avec stockage, traitement, historisation, supervision et documentation.
+
+L'architecture principale est la suivante :
 
 ```text
 OpenCode
@@ -24,81 +26,32 @@ Streamlit
 Dashboard
 ```
 
-Chaque outil possède un rôle précis :
-
-- **OpenCode** produit ou modifie les fichiers du projet.
-- **RustFS** stocke les fichiers dans un espace compatible S3.
-- **Apache Spark** traite et analyse les données.
-- **Apache Iceberg** organise les données sous forme de tables.
-- **Parquet** est utilisé pour stocker efficacement les données des tables Iceberg.
-- **Streamlit** affiche les informations dans un dashboard web.
-- **Docsify** transforme la documentation Markdown du projet en site web consultable.
-- Des **scripts de synchronisation** permettent d'envoyer automatiquement certains fichiers et logs vers RustFS.
-
----
-
-# 1. Architecture générale
+En parallèle, **Docsify** permet d'afficher la documentation du projet sous forme de site web :
 
 ```text
-                         UTILISATEUR
-                              │
-                              ▼
-                          OpenCode
-                              │
-                    crée / modifie des fichiers
-                              │
-                              ▼
-                         ~/BigData
-                              │
-                       synchronisation
-                              │
-                              ▼
-                           RustFS
-                        Stockage S3
-                              │
-                 ┌────────────┴────────────┐
-                 │                         │
-                 ▼                         ▼
-           fichiers / logs            Apache Spark
-                                           │
-                                           ▼
-                                    Apache Iceberg
-                                           │
-                              ┌────────────┼────────────┐
-                              ▼            ▼            ▼
-                           Parquet      Metadata     Snapshots
-                              │            │            │
-                              └────────────┴────────────┘
-                                           │
-                                           ▼
-                                         RustFS
-                                           │
-                                           ▼
-                                     Cache local
-                                           │
-                                           ▼
-                                       Streamlit
-                                           │
-                                           ▼
-                                        Dashboard
+README / documentation Markdown
+              ↓
+            Docsify
+              ↓
+     Documentation web
 ```
 
 ---
 
-# 2. Rôle de chaque composant
+# 1. Rôle de chaque partie de l'infrastructure
 
 ## OpenCode
 
 OpenCode est utilisé comme assistant de développement.
 
-Il peut notamment :
+Il permet notamment de :
 
 - lire les fichiers du projet ;
 - créer ou modifier du code ;
 - aider à corriger des erreurs ;
 - produire des fichiers et des logs.
 
-Dans cette infrastructure, OpenCode est donc aussi considéré comme une **source de données**.
+Dans cette infrastructure, OpenCode est aussi considéré comme une **source de données**.
 
 ---
 
@@ -110,12 +63,13 @@ Le dossier principal du projet est :
 ~/BigData
 ```
 
-Il contient les scripts, le dashboard et la configuration du projet.
+Il contient les scripts, la configuration, le dashboard et la documentation.
 
 Exemple :
 
 ```text
 BigData/
+├── README.md
 ├── dashboard.py
 ├── spark_dashboard_export.py
 ├── rustfs_dashboard_export.py
@@ -125,6 +79,11 @@ BigData/
 ├── start-all.sh
 ├── stop-all.sh
 ├── status-all.sh
+├── docs/
+│   ├── index.html
+│   ├── README.md
+│   ├── _sidebar.md
+│   └── .nojekyll
 └── .venv/
 ```
 
@@ -144,7 +103,7 @@ docker-compose.yml
 
 décrit notamment :
 
-- l'image RustFS utilisée ;
+- l'image RustFS ;
 - les ports ;
 - le volume de stockage ;
 - la configuration du conteneur.
@@ -153,11 +112,11 @@ décrit notamment :
 
 ## RustFS
 
-RustFS est le système de stockage principal.
+RustFS est le système de stockage principal du projet.
 
 Il est compatible avec le protocole **Amazon S3**.
 
-Dans ce projet, le bucket principal est :
+Le bucket principal utilisé est :
 
 ```text
 s3://opencode-data
@@ -216,7 +175,7 @@ sync-opencode-log.sh
 
 sert à synchroniser les logs OpenCode.
 
-Le fonctionnement est simple :
+Le fonctionnement est :
 
 ```text
 OpenCode
@@ -247,20 +206,18 @@ Spark peut notamment :
 - filtrer des données ;
 - compter des lignes ;
 - regrouper des informations ;
-- effectuer des requêtes SQL ;
+- exécuter des requêtes SQL ;
 - lire et écrire des tables Iceberg.
 
-Dans ce projet, Spark fonctionne localement sur la machine.
+Dans ce projet, Spark fonctionne localement.
 
-Il n'est pas nécessaire de le laisser actif en permanence : il est lancé lorsqu'un traitement est demandé.
+Il n'est pas nécessaire de le laisser actif en permanence : il est lancé lorsqu'un traitement est demandé depuis le dashboard.
 
 ---
 
 ## PySpark
 
 PySpark permet d'utiliser Apache Spark avec Python.
-
-Il sert d'intermédiaire entre les scripts Python et Spark.
 
 ```text
 Python
@@ -286,7 +243,7 @@ Iceberg = organisation des tables
 
 Une table Iceberg peut être composée de plusieurs fichiers Parquet tout en étant manipulée comme une seule table.
 
-Dans le projet, une table peut par exemple être appelée :
+Exemple de table :
 
 ```text
 rustfs.opencode.logs
@@ -349,7 +306,7 @@ Cela permet de conserver un historique de la table.
 
 ---
 
-# 3. Dashboard Streamlit
+# 2. Dashboard Streamlit
 
 Streamlit permet d'afficher l'état de l'infrastructure dans une interface web.
 
@@ -371,7 +328,7 @@ Le dashboard contient plusieurs pages :
 
 ---
 
-# 4. Cache du dashboard
+# 3. Cache du dashboard
 
 Pour éviter de ralentir Streamlit, le dashboard ne lance pas directement de gros traitements à chaque affichage.
 
@@ -383,7 +340,7 @@ Le cache est stocké dans :
 ~/.local/state/bigdata/dashboard_cache/
 ```
 
-Le fonctionnement est donc :
+Le principe est :
 
 ```text
 RustFS / Spark
@@ -395,11 +352,11 @@ cache local
 Streamlit
 ```
 
-Cela permet au dashboard de s'afficher rapidement.
+Cela permet au dashboard de rester rapide même lorsque RustFS ou Spark ont besoin de plus de temps pour analyser les données.
 
 ---
 
-# 5. Script `rustfs_dashboard_export.py`
+# 4. `rustfs_dashboard_export.py`
 
 Ce script analyse RustFS en arrière-plan.
 
@@ -425,7 +382,7 @@ permet de relancer cet inventaire.
 
 ---
 
-# 6. Script `spark_dashboard_export.py`
+# 5. `spark_dashboard_export.py`
 
 Ce script lance Spark en dehors de Streamlit.
 
@@ -446,6 +403,58 @@ Le bouton :
 ```
 
 permet de lancer ce traitement.
+
+---
+
+# 6. Documentation Docsify
+
+Docsify permet d'afficher la documentation Markdown du projet sous forme de site web.
+
+Son rôle est différent de Streamlit :
+
+```text
+Streamlit = supervision de l'infrastructure et des données
+Docsify   = documentation du projet
+```
+
+La documentation se trouve dans :
+
+```text
+~/BigData/docs/
+```
+
+avec les fichiers principaux :
+
+```text
+docs/
+├── index.html
+├── README.md
+├── _sidebar.md
+└── .nojekyll
+```
+
+- `index.html` charge Docsify ;
+- `README.md` contient la documentation affichée ;
+- `_sidebar.md` contient le menu de navigation ;
+- `.nojekyll` permet notamment de faciliter une éventuelle publication avec GitHub Pages.
+
+Docsify est chargé depuis un CDN dans `index.html`.
+
+Il n'est donc pas nécessaire d'installer Docsify globalement avec npm.
+
+Le site de documentation est servi localement avec Python :
+
+```bash
+python3 -m http.server 3000 --directory docs
+```
+
+Adresse :
+
+```text
+http://localhost:3000
+```
+
+Cette commande est maintenant intégrée automatiquement dans `start-all.sh`.
 
 ---
 
@@ -475,7 +484,7 @@ source .venv/bin/activate
 
 ---
 
-# 8. Démarrage du projet
+# 8. Démarrage complet du projet
 
 Le script principal est :
 
@@ -483,7 +492,7 @@ Le script principal est :
 start-all.sh
 ```
 
-Il permet de démarrer l'infrastructure avec une seule commande :
+Il permet de démarrer toute l'infrastructure avec une seule commande :
 
 ```bash
 cd ~/BigData
@@ -492,41 +501,63 @@ cd ~/BigData
 
 Il démarre notamment :
 
-- l'environnement Python ;
-- RustFS ;
-- OpenCode Serve ;
-- les scripts de synchronisation ;
-- Streamlit ;
-- l'inventaire RustFS en arrière-plan.
+1. l'environnement Python ;
+2. RustFS ;
+3. OpenCode Serve ;
+4. la synchronisation des logs ;
+5. la synchronisation des fichiers vers S3 ;
+6. le dashboard Streamlit ;
+7. la documentation Docsify ;
+8. l'inventaire RustFS en arrière-plan.
 
-Une fois démarré :
+Une fois le démarrage terminé :
 
 ```text
-Dashboard :
+Dashboard Streamlit :
 http://localhost:8501
+
+Documentation Docsify :
+http://localhost:3000
 
 RustFS :
 http://localhost:9001
+
+API S3 RustFS :
+http://localhost:9000
 ```
+
+Spark reste lancé à la demande depuis le dashboard.
 
 ---
 
-# 9. Arrêt du projet
+# 9. Arrêt complet du projet
 
-Pour arrêter l'infrastructure :
+Le script :
+
+```text
+stop-all.sh
+```
+
+permet d'arrêter l'infrastructure.
+
+Utilisation :
 
 ```bash
 cd ~/BigData
 ./stop-all.sh
 ```
 
-Ce script arrête notamment :
+Il arrête notamment :
 
 - Streamlit ;
+- Docsify ;
 - OpenCode ;
 - les scripts de synchronisation ;
-- les traitements en arrière-plan ;
-- RustFS.
+- les traitements Spark éventuels ;
+- l'inventaire RustFS ;
+- les services Docker/RustFS prévus par le script.
+
+Docsify est arrêté grâce au processus du serveur Python utilisant le port `3000`.
 
 ---
 
@@ -545,15 +576,6 @@ Utilisation :
 ```bash
 cd ~/BigData
 ./status-all.sh
-```
-
-Exemple d'état :
-
-```text
-RustFS      : actif
-Streamlit   : actif
-OpenCode    : actif
-Spark       : inactif
 ```
 
 Spark peut être inactif sans que cela représente une erreur : il est lancé uniquement lorsqu'un traitement est demandé.
@@ -579,12 +601,24 @@ Le parcours d'une donnée peut être résumé ainsi :
                 ↓
 7. Les données sont stockées en Parquet
                 ↓
-8. Iceberg conserve également les métadonnées et snapshots
+8. Iceberg conserve les métadonnées et snapshots
                 ↓
 9. Les scripts d'export calculent des statistiques
                 ↓
 10. Streamlit affiche les résultats dans le dashboard
 ```
+
+Docsify fonctionne en parallèle :
+
+```text
+Documentation Markdown
+        ↓
+      Docsify
+        ↓
+Documentation web
+```
+
+Docsify ne participe donc pas au traitement des données.
 
 ---
 
@@ -607,219 +641,55 @@ Le parcours d'une donnée peut être résumé ainsi :
 | Cache local | Évite de recalculer les statistiques à chaque page |
 | Streamlit | Affiche le dashboard de supervision |
 | Docsify | Affiche la documentation Markdown sous forme de site web |
-| `start-all.sh` | Démarre l'infrastructure |
-| `stop-all.sh` | Arrête l'infrastructure |
+| `start-all.sh` | Démarre l'ensemble de l'infrastructure |
+| `stop-all.sh` | Arrête l'ensemble de l'infrastructure |
 | `status-all.sh` | Vérifie l'état de l'infrastructure |
 
 ---
 
-# 13. Documentation avec Docsify
+# 13. Commandes utiles
 
-Docsify est utilisé pour présenter la documentation du projet sous forme de site web.
-
-Contrairement à Streamlit, Docsify ne sert pas à afficher les données du Data Lake.
-
-Son rôle est uniquement de présenter la **documentation technique et fonctionnelle du projet**.
-
-On peut donc distinguer :
-
-```text
-Streamlit = supervision des données et de l'infrastructure
-Docsify   = documentation du projet
-```
-
-Docsify lit directement des fichiers Markdown et les affiche dans une interface web.
-
-Le principe est :
-
-```text
-README.md / fichiers Markdown
-            ↓
-          Docsify
-            ↓
-   documentation web
-```
-
-## Organisation conseillée
-
-Une organisation simple du dépôt Git peut être :
-
-```text
-BigData/
-├── README.md
-├── docs/
-│   ├── index.html
-│   ├── README.md
-│   ├── _sidebar.md
-│   └── .nojekyll
-├── dashboard.py
-├── spark_dashboard_export.py
-├── rustfs_dashboard_export.py
-├── docker-compose.yml
-├── start-all.sh
-├── stop-all.sh
-└── status-all.sh
-```
-
-Le fichier principal de documentation peut être placé dans :
-
-```text
-docs/README.md
-```
-
-Le fichier :
-
-```text
-docs/index.html
-```
-
-charge Docsify et indique à Docsify où trouver les fichiers Markdown.
-
-Exemple minimal :
-
-```html
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Documentation BigData</title>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-</head>
-
-<body>
-  <div id="app">Chargement...</div>
-
-  <script>
-    window.$docsify = {
-      name: 'Projet BigData',
-      repo: '',
-      loadSidebar: true,
-      subMaxLevel: 2
-    }
-  </script>
-
-  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-</body>
-</html>
-```
-
-Le fichier :
-
-```text
-docs/_sidebar.md
-```
-
-peut servir de menu de navigation.
-
-Exemple :
-
-```markdown
-- [Accueil](README.md)
-- [Architecture](README.md#1-architecture-générale)
-- [RustFS](README.md#rustfs)
-- [Apache Spark](README.md#apache-spark)
-- [Apache Iceberg](README.md#apache-iceberg)
-- [Dashboard Streamlit](README.md#3-dashboard-streamlit)
-- [Commandes utiles](README.md#14-commandes-utiles)
-```
-
-Le fichier vide :
-
-```text
-docs/.nojekyll
-```
-
-est utile si la documentation est ensuite publiée avec GitHub Pages.
-
-## Lancer Docsify en local
-
-Si Docsify CLI est disponible :
-
-```bash
-docsify serve docs
-```
-
-ou avec `npx` :
-
-```bash
-npx docsify-cli serve docs
-```
-
-La documentation est alors généralement accessible sur :
-
-```text
-http://localhost:3000
-```
-
-## Place de Docsify dans le projet
-
-Docsify n'intervient pas dans le traitement des données.
-
-L'architecture fonctionnelle reste :
-
-```text
-OpenCode
-   ↓
-RustFS
-   ↓
-Apache Spark
-   ↓
-Apache Iceberg
-   ↓
-Streamlit
-```
-
-Docsify se place à côté de cette architecture :
-
-```text
-Projet Git
-   │
-   ├── Code et infrastructure
-   │       ↓
-   │   Streamlit
-   │
-   └── Documentation Markdown
-           ↓
-         Docsify
-           ↓
-    Documentation web
-```
-
-Ainsi, **Streamlit sert à visualiser le fonctionnement de l'infrastructure**, tandis que **Docsify sert à expliquer le projet**.
-
----
-
-# 14. Commandes utiles
-
-Démarrer le projet :
+## Démarrer toute l'infrastructure
 
 ```bash
 cd ~/BigData
 ./start-all.sh
 ```
 
-Arrêter le projet :
+## Arrêter toute l'infrastructure
 
 ```bash
 cd ~/BigData
 ./stop-all.sh
 ```
 
-Vérifier les services :
+## Vérifier les services
 
 ```bash
 cd ~/BigData
 ./status-all.sh
 ```
 
-Afficher les buckets RustFS :
+## Lancer uniquement la documentation manuellement
+
+```bash
+cd ~/BigData
+python3 -m http.server 3000 --directory docs
+```
+
+Puis ouvrir :
+
+```text
+http://localhost:3000
+```
+
+## Afficher les buckets RustFS
 
 ```bash
 aws --profile rustfs   --endpoint-url http://localhost:9000   s3 ls
 ```
 
-Afficher le contenu du bucket principal :
+## Afficher le contenu du bucket principal
 
 ```bash
 aws --profile rustfs   --endpoint-url http://localhost:9000   s3 ls s3://opencode-data/
@@ -827,17 +697,76 @@ aws --profile rustfs   --endpoint-url http://localhost:9000   s3 ls s3://opencod
 
 ---
 
-# 15. Remarque sur Spark
+# 14. Remarque sur Spark
 
 Spark télécharge certaines dépendances nécessaires à son fonctionnement lors du premier lancement.
 
-Ces fichiers peuvent être mis en cache sur la machine.
+Ces fichiers peuvent être enregistrés dans un cache local.
 
-Après un nettoyage du cache, le premier démarrage de Spark peut donc être plus long car les dépendances doivent être téléchargées à nouveau.
+Après un nettoyage du cache, le premier démarrage de Spark peut être plus long car les dépendances doivent être téléchargées à nouveau.
 
 ---
 
-# 16. Conclusion
+# 15. Ports utilisés
+
+| Service | Port | Adresse |
+|---|---:|---|
+| Docsify | 3000 | `http://localhost:3000` |
+| Streamlit | 8501 | `http://localhost:8501` |
+| RustFS API S3 | 9000 | `http://localhost:9000` |
+| RustFS interface | 9001 | `http://localhost:9001` |
+
+---
+
+# 16. Architecture finale
+
+```text
+                         OpenCode
+                            │
+                            ▼
+                       ~/BigData
+                            │
+                     synchronisation
+                            │
+                            ▼
+                         RustFS
+                            │
+                            ▼
+                     Apache Spark
+                            │
+                            ▼
+                    Apache Iceberg
+                            │
+               Parquet + métadonnées
+                            │
+                            ▼
+                         RustFS
+                            │
+                            ▼
+                       Cache local
+                            │
+                            ▼
+                        Streamlit
+                            │
+                            ▼
+                        Dashboard
+
+
+En parallèle :
+
+README.md / docs/
+        │
+        ▼
+      Docsify
+        │
+        ▼
+Documentation web
+http://localhost:3000
+```
+
+---
+
+# Conclusion
 
 Ce projet met en place un **mini Data Lake local** permettant de reproduire les principales étapes d'une architecture Big Data.
 
@@ -861,4 +790,4 @@ Streamlit les affiche.
 Docsify présente la documentation du projet.
 ```
 
-L'infrastructure sépare ainsi clairement la production, le stockage, le traitement, l'organisation et la visualisation des données.
+L'infrastructure sépare ainsi clairement la production, le stockage, le traitement, l'organisation, la visualisation et la documentation des données.

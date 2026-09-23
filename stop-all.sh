@@ -73,6 +73,35 @@ else
 
 fi
 
+# ============================================================
+# DOCSIFY
+# ============================================================
+
+echo ""
+echo "Arrêt de Docsify..."
+
+DOCSIFY_PID="$STATE/docsify.pid"
+
+if [ -f "$DOCSIFY_PID" ]; then
+
+    PID=$(cat "$DOCSIFY_PID")
+
+    if kill -0 "$PID" 2>/dev/null; then
+        kill "$PID" 2>/dev/null
+        echo "Docsify arrêté."
+    else
+        echo "Docsify n'était plus actif."
+    fi
+
+    rm -f "$DOCSIFY_PID"
+
+else
+
+    # Sécurité si le fichier PID n'existe plus
+    pkill -f "http.server 3000" 2>/dev/null || true
+
+    echo "Docsify arrêté si présent."
+fi
 
 # ============================================================
 # PID
