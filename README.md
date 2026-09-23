@@ -1,4 +1,4 @@
-# Projet BigData — Data Lake local
+# Projet BigData
 
 ## Presentation
 
@@ -950,9 +950,212 @@ source .venv/bin/activate
 
 ---
 
+<a id="ci-cd"></a>
+
+# 14. CI / CD avec GitHub Actions
+
+Le projet utilise **GitHub Actions** pour automatiser une partie des vérifications à chaque modification envoyée sur GitHub.
+
+## CI
+
+La **CI**, ou *Continuous Integration* (intégration continue), consiste à vérifier automatiquement qu'une nouvelle modification du code ne casse pas le projet.
+
+Le workflow est stocké dans :
+
+```text
+.github/workflows/ci.yml
+```
+
+Il est déclenché lors :
+
+```text
+git push
+```
+
+ou lorsqu'une Pull Request est ouverte vers la branche `main`.
+
+Le principe est :
+
+```text
+Modification du projet
+        ↓
+      git push
+        ↓
+      GitHub
+        ↓
+   GitHub Actions
+        ↓
+       test
+        ↓
+┌───────────────────────────────┐
+│ Vérification Python           │
+│ Vérification scripts Shell    │
+│ Vérification Docker Compose   │
+│ Vérification Docsify          │
+└───────────────────────────────┘
+        ↓
+      Résultat
+        ↓
+   ✅ succès / ❌ erreur
+```
+
+Le job principal s'appelle :
+
+```text
+test
+```
+
+Lorsque GitHub affiche :
+
+```text
+✅ test
+```
+
+cela signifie que toutes les vérifications du workflow se sont terminées correctement.
+
+### Vérification du code Python
+
+La CI vérifie la syntaxe des principaux fichiers Python avec :
+
+```bash
+python -m py_compile
+```
+
+Les fichiers contrôlés sont notamment :
+
+```text
+dashboard.py
+spark_dashboard_export.py
+rustfs_dashboard_export.py
+spark_iceberg.py
+create_iceberg.py
+test_iceberg.py
+```
+
+Cette étape permet de détecter automatiquement une erreur de syntaxe avant d'utiliser le projet.
+
+### Vérification des scripts Shell
+
+Les scripts Shell sont contrôlés avec :
+
+```bash
+bash -n
+```
+
+Cela permet de vérifier leur syntaxe sans réellement les exécuter.
+
+Les scripts contrôlés comprennent notamment :
+
+```text
+start-all.sh
+stop-all.sh
+status-all.sh
+sync-opencode-log.sh
+```
+
+### Vérification de Docker Compose
+
+La commande :
+
+```bash
+docker compose config
+```
+
+permet de vérifier que le fichier :
+
+```text
+docker-compose.yml
+```
+
+est correctement formé.
+
+La CI ne démarre pas obligatoirement toute l'infrastructure à cette étape : elle vérifie d'abord que sa configuration Docker est valide.
+
+### Vérification de Docsify
+
+La CI vérifie également que les fichiers essentiels de la documentation existent :
+
+```text
+docs/index.html
+docs/README.md
+docs/_sidebar.md
+```
+
+Cela évite par exemple de publier une version du projet dans laquelle la documentation Docsify serait incomplète.
+
+### Consultation sur GitHub
+
+Les résultats sont visibles dans l'onglet :
+
+```text
+GitHub
+  ↓
+Actions
+  ↓
+CI BigData
+  ↓
+test
+```
+
+Un symbole vert indique que les vérifications ont réussi.
+
+---
+
+## CD
+
+Le **CD**, ou *Continuous Delivery / Continuous Deployment*, correspond à l'étape qui suit la CI.
+
+Son objectif est de déployer automatiquement une version du projet après validation des tests.
+
+Dans le projet actuel, la **CI est mise en place**, mais le déploiement automatique complet n'est pas encore activé.
+
+Le démarrage du projet reste réalisé localement avec :
+
+```bash
+cd ~/BigData
+./start-all.sh
+```
+
+Une évolution possible serait d'utiliser un **runner GitHub Actions auto-hébergé** dans WSL.
+
+Le principe serait alors :
+
+```text
+git push
+   ↓
+GitHub Actions
+   ↓
+CI : tests automatiques
+   ↓
+tests OK
+   ↓
+runner WSL
+   ↓
+git pull
+   ↓
+./stop-all.sh
+   ↓
+./start-all.sh
+   ↓
+nouvelle version déployée
+```
+
+Cette partie constitue donc le **CD cible** du projet.
+
+### Etat actuel
+
+```text
+CI  : ✅ mise en place avec GitHub Actions
+CD  : ⏳ non automatisé pour le moment
+```
+
+Cette séparation est importante : le projet possède déjà une intégration continue fonctionnelle, tandis que le déploiement continu pourra être ajouté plus tard si nécessaire.
+
+---
+
 <a id="architecture-etl"></a>
 
-# 14. Architecture Extract, Transform et Load
+# 15. Architecture Extract, Transform et Load
 
 Le projet peut être décrit simplement avec une logique de type **ETL**.
 
@@ -1171,7 +1374,7 @@ Dans l'architecture actuelle, aucune base de restitution supplémentaire n'est n
 
 <a id="architecture-finale"></a>
 
-# 15. Architecture finale
+# 16. Architecture finale
 
 ```text
                          OpenCode
@@ -1234,7 +1437,7 @@ http://localhost:3000
 
 <a id="fonctionnement-global"></a>
 
-# 16. Fonctionnement global
+# 17. Fonctionnement global
 
 ```text
 1. OpenCode crée ou modifie une donnée
@@ -1278,7 +1481,7 @@ Documentation web
 
 <a id="resume-des-technologies"></a>
 
-# 17. Resume des technologies
+# 18. Resume des technologies
 
 | Technologie | Rôle |
 |---|---|
@@ -1300,6 +1503,9 @@ Documentation web
 | Cache local | Conserve les statistiques du dashboard |
 | Streamlit | Affiche le dashboard / BI |
 | Docsify | Affiche la documentation du projet |
+| GitHub Actions | Exécute automatiquement la CI du projet |
+| CI | Vérifie automatiquement le code, les scripts, Docker Compose et Docsify |
+| CD | Déploiement automatique prévu comme évolution du projet |
 | `start-all.sh` | Démarre l'infrastructure |
 | `stop-all.sh` | Arrête l'infrastructure |
 | `status-all.sh` | Vérifie l'état de l'infrastructure |
@@ -1308,7 +1514,7 @@ Documentation web
 
 <a id="depannage"></a>
 
-# 18. Depannage
+# 19. Depannage
 
 ## RustFS ne repond pas
 
@@ -1424,7 +1630,11 @@ Le cache local conserve ces résultats.
 Streamlit les affiche.
 
 Docsify présente la documentation.
+
+GitHub Actions vérifie automatiquement le projet avec la CI.
 ```
+
+La CI est actuellement fonctionnelle. Le CD complet reste une évolution possible pour automatiser le redémarrage ou le déploiement du projet après validation des tests.
 
 L'architecture mise en place reste volontairement simple :
 

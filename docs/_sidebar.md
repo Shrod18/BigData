@@ -19,7 +19,6 @@
 - [💾 Cache du dashboard](#cache-du-dashboard)
 - [📦 Export RustFS](#export-rustfs)
 - [⚡ Export Spark / Iceberg](#export-spark-et-iceberg)
-
 - [📚 Documentation Docsify](#documentation-docsify)
 - [🧭 Navigation Docsify](#navigation-docsify)
 - [🐍 Environnement Python](#environnement-python)
@@ -30,6 +29,7 @@
 - [💻 Commandes utiles](#commandes-utiles)
 - [🔌 Ports](#ports)
 
+- [♻️ CI / CD](#ci-cd)
 - [🔄 Architecture ETL](#architecture-etl)
 - [🧩 Architecture finale](#architecture-finale)
 - [🔄 Fonctionnement global](#fonctionnement-global)
