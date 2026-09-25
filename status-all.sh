@@ -91,3 +91,15 @@ fi
 
 
 echo ""
+# --- REDPANDA STATUS ---
+echo ""
+echo "========================================"
+echo "  REDPANDA / STREAMING"
+echo "========================================"
+RP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+if [ -x "$RP_DIR/status-redpanda.sh" ]; then
+    "$RP_DIR/status-redpanda.sh" || true
+else
+    echo "⚠️ status-redpanda.sh introuvable."
+fi
+# --- REDPANDA STATUS END ---

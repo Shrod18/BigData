@@ -1,1 +1,4 @@
 .venv/
+.venv-spark35/
+*.bak-spark41
+*.bak-before-redpanda

@@ -838,34 +838,37 @@ if page == "🏠 Vue générale":
 
     st.code(
         """
-OpenCode
-   │
-   ▼
-~/BigData
-   │
-   ▼
-RustFS S3
-   │
-   ├──────────────┐
-   │              │
-   ▼              ▼
-Fichiers      Apache Spark
-                  │
-                  ▼
-             Apache Iceberg
-                  │
-        ┌─────────┼─────────┐
-        ▼         ▼         ▼
-     Parquet   Metadata  Snapshots
-                  │
-                  ▼
-               RustFS
-                  │
-                  ▼
-      Cache statistiques local
-                  │
-                  ▼
-              Streamlit
+                 OpenCode
+                     │
+                     ▼
+                 ~/BigData
+                     │
+        ┌────────────┴────────────┐
+        │                         │
+    BATCH                    TEMPS RÉEL
+        │                         │
+        ▼                         ▼
+    RustFS S3                  Redpanda
+        │                         │
+        ▼                         ▼
+Apache Spark         Spark Structured Streaming
+        │                         │
+        └────────────┬────────────┘
+                     ▼
+               Apache Iceberg
+                     │
+          ┌──────────┼──────────┐
+          ▼          ▼          ▼
+      Parquet    Metadata   Snapshots
+                     │
+                     ▼
+                  RustFS
+                     │
+                     ▼
+          Cache statistiques local
+                     │
+                     ▼
+                 Streamlit
 """
     )
 
@@ -1535,3 +1538,12 @@ st.caption(
     "Big Data Control Center • "
     f"{datetime.now().strftime('%d/%m/%Y %H:%M:%S')}"
 )
+
+
+# --- REDPANDA DASHBOARD START ---
+try:
+    from redpanda_dashboard import render_redpanda_panel
+    render_redpanda_panel()
+except Exception as exc:
+    print(f"[DASHBOARD] Redpanda indisponible : {exc}")
+# --- REDPANDA DASHBOARD END ---

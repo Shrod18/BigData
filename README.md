@@ -15,32 +15,31 @@ L'objectif est de reproduire simplement le fonctionnement d'une architecture de 
 - supervision avec Streamlit ;
 - documentation avec Docsify.
 
-Le flux principal actuellement implémenté est :
+Le projet possède maintenant deux chemins complémentaires : un flux **batch** et un flux **temps réel**.
 
 ```text
-OpenCode
-   ↓
-Fichiers / logs
-   ↓
-Scripts de synchronisation
-   ↓
-RustFS / S3
-   ↓
-Apache Spark
-   ↓
-Transformations
-   ↓
-Apache Iceberg
-   ↓
-Iceberg Warehouse
-   ↓
-Parquet + Metadata + Snapshots
-   ↓
-Cache local
-   ↓
-Streamlit
-   ↓
-Dashboard / BI
+                         OpenCode / sources
+                                │
+                 ┌──────────────┴──────────────┐
+                 │                             │
+              BATCH                        TEMPS RÉEL
+                 │                             │
+      scripts de synchronisation            Redpanda
+                 │                             │
+              RustFS / S3          Spark Structured Streaming
+                 │                             │
+             Spark Batch                       │
+                 └──────────────┬──────────────┘
+                                ↓
+                         Apache Iceberg
+                                ↓
+                 Parquet + Metadata + Snapshots
+                                ↓
+                             RustFS
+                                ↓
+                         Cache / Streamlit
+                                ↓
+                         Dashboard / BI
 ```
 
 La documentation fonctionne en parallèle :
@@ -98,6 +97,14 @@ BigData/
 ├── sync-opencode-log.sh
 ├── sync-opencode-s3.sh
 ├── docker-compose.yml
+├── docker-compose.redpanda.yml
+├── redpanda_producer.py
+├── spark_redpanda_stream.py
+├── start-redpanda.sh
+├── stop-redpanda.sh
+├── status-redpanda.sh
+├── send-redpanda-test.sh
+├── test-redpanda-e2e.sh
 ├── start-all.sh
 ├── stop-all.sh
 ├── status-all.sh
@@ -274,6 +281,105 @@ Cette étape correspond au chargement des données brutes dans le stockage S3.
 
 ---
 
+## Redpanda
+
+Redpanda ajoute au projet une couche de **messagerie événementielle compatible Kafka**. Il sert à recevoir des événements en continu avant leur traitement par Spark Structured Streaming.
+
+Le topic utilisé est :
+
+```text
+opencode.logs
+```
+
+Les composants principaux sont :
+
+```text
+redpanda_producer.py
+spark_redpanda_stream.py
+docker-compose.redpanda.yml
+start-redpanda.sh
+stop-redpanda.sh
+status-redpanda.sh
+send-redpanda-test.sh
+test-redpanda-e2e.sh
+```
+
+La console Redpanda est disponible sur :
+
+```text
+http://localhost:8080
+```
+
+L'API Kafka est exposée sur :
+
+```text
+localhost:19092
+```
+
+<a id="streaming-temps-reel"></a>
+### Streaming temps réel
+
+Le flux temps réel est :
+
+```text
+OpenCode / événements
+        ↓
+     Redpanda
+        ↓
+Spark Structured Streaming 3.5.9
+        ↓
+   Apache Iceberg
+        ↓
+rustfs.opencode.logs_stream_stream
+        ↓
+Parquet + metadata + snapshots
+        ↓
+     RustFS / S3
+```
+
+Spark Structured Streaming utilise l'environnement :
+
+```text
+~/BigData/.venv-spark35
+```
+
+Les données de la table sont stockées sous :
+
+```text
+s3://opencode-data/spark-warehouse/opencode/logs_stream/
+```
+
+Redpanda est intégré aux scripts généraux du projet :
+
+```bash
+./start-all.sh
+./status-all.sh
+./stop-all.sh
+```
+
+Pour envoyer un message de test :
+
+```bash
+./send-redpanda-test.sh
+```
+
+Pour vérifier le flux complet **Redpanda → Spark → Iceberg → RustFS** :
+
+```bash
+./test-redpanda-e2e.sh
+```
+
+Le dashboard Streamlit contient également un panneau **Redpanda / Streaming temps réel** affichant l'état du broker, du producer, de Spark Streaming, le nombre de fichiers Parquet et les derniers messages du topic.
+
+| Service | Port | Adresse |
+|---|---:|---|
+| Console Redpanda | 8080 | `http://localhost:8080` |
+| Kafka API | 19092 | `localhost:19092` |
+| Schema Registry | 18081 | `http://localhost:18081` |
+| Admin API | 19644 | `http://localhost:19644` |
+
+---
+
 ## Apache Spark
 
 Apache Spark est le moteur de traitement des données. Un moteur de traitement permet de lire des données, d'appliquer des opérations dessus puis de produire un résultat exploitable.
@@ -300,9 +406,10 @@ Spark peut notamment :
 
 Dans ce projet, Spark fonctionne localement sur la machine.
 
-Il n'est pas lancé en permanence.
+Deux usages coexistent :
 
-Il est utilisé lorsqu'un traitement ou une actualisation des données Spark / Iceberg est demandé.
+- **Spark Batch** est lancé à la demande pour les traitements et les actualisations Spark / Iceberg du dashboard ;
+- **Spark Structured Streaming 3.5.9** reste actif lorsque Redpanda est démarré afin de traiter les événements en temps réel.
 
 ### Configuration locale
 
@@ -316,8 +423,8 @@ shuffle.partitions     4 pour l'export du dashboard
 Dépendances principales utilisées :
 
 ```text
-org.apache.iceberg:iceberg-spark-runtime-4.1_2.13:1.11.0
-org.apache.hadoop:hadoop-aws:3.4.2
+org.apache.iceberg:iceberg-spark-runtime-3.5_2.12:1.11.0
+org.apache.hadoop:hadoop-aws:3.3.4
 ```
 
 Lors de la première exécution, Spark peut télécharger ces JAR depuis Maven.
@@ -369,7 +476,7 @@ Une table Iceberg peut être composée de plusieurs fichiers physiques tout en �
 Exemple de table utilisée dans le projet :
 
 ```text
-rustfs.opencode.logs
+rustfs.opencode.logs_stream
 ```
 
 Schéma :
@@ -391,7 +498,7 @@ Catalogue : rustfs
 Type      : HadoopCatalog
 Entrepôt  : s3a://opencode-data/spark-warehouse
 Namespace : rustfs.opencode
-Table     : rustfs.opencode.logs
+Table     : rustfs.opencode.logs_stream
 ```
 
 Le chemin `s3a://` permet à Hadoop et Spark d'utiliser le connecteur S3A.
@@ -415,7 +522,7 @@ Exemple de création SQL :
 ```sql
 CREATE NAMESPACE IF NOT EXISTS rustfs.opencode;
 
-CREATE TABLE IF NOT EXISTS rustfs.opencode.logs (
+CREATE TABLE IF NOT EXISTS rustfs.opencode.logs_stream (
     timestamp TIMESTAMP,
     session_id STRING,
     type STRING,
@@ -428,7 +535,7 @@ Lecture :
 
 ```sql
 SELECT *
-FROM rustfs.opencode.logs
+FROM rustfs.opencode.logs_stream
 ORDER BY timestamp DESC;
 ```
 
@@ -436,7 +543,7 @@ Historique :
 
 ```sql
 SELECT committed_at, snapshot_id, operation
-FROM rustfs.opencode.logs.snapshots
+FROM rustfs.opencode.logs_stream.snapshots
 ORDER BY committed_at DESC;
 ```
 
@@ -802,6 +909,9 @@ Il démarre notamment :
 - la synchronisation des fichiers ;
 - Streamlit ;
 - Docsify ;
+- Redpanda et sa console ;
+- le producer Redpanda ;
+- Spark Structured Streaming ;
 - l'inventaire RustFS en arrière-plan.
 
 Une fois le projet démarré :
@@ -818,9 +928,12 @@ http://localhost:9000
 
 RustFS interface :
 http://localhost:9001
+
+Redpanda Console :
+http://localhost:8080
 ```
 
-Spark reste utilisé à la demande afin d'éviter de le laisser tourner inutilement en permanence.
+Spark Batch reste utilisé à la demande. Spark Structured Streaming reste actif tant que Redpanda est démarré.
 
 ---
 
@@ -874,9 +987,9 @@ cd ~/BigData
 ./status-all.sh
 ```
 
-Spark peut être inactif sans que cela représente une erreur.
+Spark Batch peut être inactif sans que cela représente une erreur.
 
-Il est lancé uniquement lorsqu'un traitement est nécessaire.
+En revanche, lorsque Redpanda est démarré, Spark Structured Streaming doit apparaître actif dans `status-all.sh`.
 
 ---
 
@@ -928,6 +1041,20 @@ aws --profile rustfs \
   s3 ls s3://opencode-data/
 ```
 
+## Tester le streaming Redpanda
+
+```bash
+cd ~/BigData
+./send-redpanda-test.sh
+```
+
+## Tester le flux temps réel complet
+
+```bash
+cd ~/BigData
+./test-redpanda-e2e.sh
+```
+
 ## Activer l'environnement Python
 
 ```bash
@@ -947,6 +1074,10 @@ source .venv/bin/activate
 | Streamlit | 8501 | `http://localhost:8501` |
 | RustFS API S3 | 9000 | `http://localhost:9000` |
 | RustFS interface | 9001 | `http://localhost:9001` |
+| Console Redpanda | 8080 | `http://localhost:8080` |
+| Kafka API Redpanda | 19092 | `localhost:19092` |
+| Schema Registry Redpanda | 18081 | `http://localhost:18081` |
+| Admin API Redpanda | 19644 | `http://localhost:19644` |
 
 ---
 
@@ -1373,65 +1504,31 @@ Dans l'architecture actuelle, aucune base de restitution supplémentaire n'est n
 ---
 
 <a id="architecture-finale"></a>
-
 # 16. Architecture finale
 
 ```text
-                         OpenCode
-                            │
-                            ▼
-                    Fichiers / Logs
-                            │
-                            ▼
-                 Scripts de synchronisation
-                            │
-                            ▼
-                       RustFS / S3
-                            │
-                            ▼
-                     Apache Spark
-                            │
-                      Transform
-                            │
-                            ▼
-                    Apache Iceberg
-                            │
-                         Load
-                            │
-                            ▼
-                  Iceberg Warehouse
-                            │
-            Parquet + Metadata + Manifests
-                            │
-                    Snapshots / ACID
-                            │
-                            ▼
-                     Apache Spark
-                            │
-             statistiques / agrégations
-                            │
-                            ▼
-                       Cache local
-                            │
-                            ▼
-                        Streamlit
-                            │
-                            ▼
-                     Dashboard / BI
+                         SOURCES / OpenCode
+                                │
+                 ┌──────────────┴──────────────┐
+                 │                             │
+              BATCH                        TEMPS RÉEL
+                 │                             │
+              RustFS                       Redpanda
+                 │                             │
+            Spark Batch            Spark Structured Streaming
+                 │                             │
+                 └──────────────┬──────────────┘
+                                │
+                           Apache Iceberg
+                                │
+                       Parquet + metadata
+                                │
+                              RustFS
+                                │
+                            Streamlit
 ```
 
-La documentation fonctionne en parallèle :
-
-```text
-docs/README.md
-      │
-      ▼
-    Docsify
-      │
-      ▼
-Documentation web
-http://localhost:3000
-```
+Docsify reste indépendant du traitement des données et sert à présenter la documentation.
 
 ---
 
@@ -1492,6 +1589,8 @@ Documentation web
 | AWS CLI | Communique avec RustFS |
 | Scripts de synchronisation | Chargent les fichiers dans S3 |
 | Apache Spark | Lit, transforme et analyse les données |
+| Redpanda | Transporte les événements en temps réel via une API compatible Kafka |
+| Spark Structured Streaming | Consomme les événements Redpanda et les écrit en continu dans Iceberg |
 | PySpark | Permet d'utiliser Spark avec Python |
 | Apache Iceberg | Organise et versionne les tables |
 | Iceberg Warehouse | Zone S3 contenant les tables Iceberg |
@@ -1566,7 +1665,7 @@ Vérifier :
 ```text
 Bucket    : opencode-data
 Entrepôt  : s3a://opencode-data/spark-warehouse
-Table     : rustfs.opencode.logs
+Table     : rustfs.opencode.logs_stream
 ```
 
 ---
@@ -1601,6 +1700,9 @@ Ctrl + F5
 ```
 
 dans le navigateur.
+
+---
+
 
 ---
 

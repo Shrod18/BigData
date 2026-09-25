@@ -1,5 +1,26 @@
 #!/bin/bash
 
+
+# --- REDPANDA STOP ---
+echo ""
+echo "========================================"
+echo "  ARRÊT REDPANDA / STREAMING"
+echo "========================================"
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+if [ -x "$SCRIPT_DIR/stop-redpanda.sh" ]; then
+    if "$SCRIPT_DIR/stop-redpanda.sh"; then
+        echo "✅ Redpanda / Spark Streaming arrêté."
+    else
+        echo "⚠️ Problème pendant l'arrêt de Redpanda."
+    fi
+else
+    echo "⚠️ stop-redpanda.sh introuvable."
+fi
+# --- REDPANDA STOP END ---
+
+
 PROJECT="$HOME/BigData"
 STATE="$HOME/.local/state/bigdata"
 

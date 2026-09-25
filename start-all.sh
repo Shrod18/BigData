@@ -285,3 +285,23 @@ echo "Logs :"
 echo "  $STATE"
 
 echo ""
+
+# --- REDPANDA START ---
+echo ""
+echo "========================================"
+echo "  REDPANDA / STREAMING"
+echo "========================================"
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+if [ -x "$SCRIPT_DIR/start-redpanda.sh" ]; then
+    if "$SCRIPT_DIR/start-redpanda.sh"; then
+        echo "✅ Redpanda / Spark Streaming démarré."
+    else
+        echo "⚠️ Redpanda n'a pas pu démarrer."
+    fi
+else
+    echo "⚠️ start-redpanda.sh introuvable."
+fi
+# --- REDPANDA END ---
+
